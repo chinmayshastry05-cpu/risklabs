@@ -1,0 +1,24 @@
+{
+  "model_a": {
+    "accuracy": 0.9583,
+    "precision_macro": 0.9582,
+    "recall_macro": 0.9641,
+    "f1_macro": 0.9608,
+    "roc_auc_ovr": 0.9962
+  },
+  "model_b": {
+    "accuracy": 0.9458,
+    "precision_macro": 0.9465,
+    "recall_macro": 0.9606,
+    "f1_macro": 0.95,
+    "roc_auc_ovr": 0.9858
+  },
+  "n_train": 960,
+  "n_test": 240,
+  "label_map": {
+    "Low": 0,
+    "Medium": 1,
+    "High": 2
+  },
+  "note": "Metrics on SYNTHETIC data \u2014 for pipeline validation only."
+}
