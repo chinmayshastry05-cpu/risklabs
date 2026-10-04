@@ -13,8 +13,11 @@ RiskTextVectorizer.transform with model.encode(...) — keep output 2-D numeric.
 
 import re
 
+import numpy as np
 import pandas as pd
+from scipy import sparse
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_selection import SelectKBest, chi2
 
 # category -> list of (phrase, weight). Positive weights = risk language,
 # negative weights (the "positive" category) = healthy language.
@@ -147,3 +150,53 @@ class RiskTextVectorizer:
 
     def get_feature_names(self) -> list:
         return list(self.vectorizer.get_feature_names_out())
+
+
+def text_feature_report(texts, vectorizer: "RiskTextVectorizer") -> dict:
+    """Diagnostic report on a fitted TF-IDF block (fit on train texts only).
+
+    Reports dimensionality, sparsity and how much of the TF-IDF vocabulary
+    is already captured by the transparent lexicon — key inputs to the
+    "why does Model B underperform Model A?" investigation. Returns a
+    JSON-serializable dict; does not modify anything.
+    """
+    X = vectorizer.transform(_clean(texts))
+    if not sparse.issparse(X):
+        X = sparse.csr_matrix(X)
+    n_docs, n_terms = X.shape
+    nnz = int(X.nnz)
+    density = float(nnz / max(n_docs * n_terms, 1))
+    avg_nnz = float(nnz / max(n_docs, 1))
+
+    vocab = set(vectorizer.get_feature_names())
+    lex_phrases = {p for phrases in LEXICON.values() for p, _ in phrases}
+    # lexicon phrases are matched as substrings; count vocab unigrams/bigrams
+    # that appear inside (or equal) any lexicon phrase, or vice versa
+    overlap = sorted(
+        t for t in vocab
+        if any(t in p or p in t for p in lex_phrases)
+    )
+    return {
+        "n_docs": int(n_docs),
+        "n_terms": int(n_terms),
+        "nnz": nnz,
+        "density": round(density, 5),
+        "sparsity": round(1.0 - density, 5),
+        "avg_nonzero_terms_per_doc": round(avg_nnz, 1),
+        "lexicon_overlap_terms": overlap,
+        "n_lexicon_overlap": len(overlap),
+    }
+
+
+def select_text_features(X_text, y, k: int = 100):
+    """Opt-in chi2 feature selection for the TF-IDF block (EXPERIMENTAL).
+
+    Returns (X_selected, selector). The DEFAULT RiskLabs Model B does NOT use
+    this — it keeps the full TF-IDF block as the transparent baseline so the
+    A-vs-B experiment stays comparable. Use in ablation experiments only.
+    """
+    X = X_text if sparse.issparse(X_text) else sparse.csr_matrix(
+        np.asarray(X_text, dtype=float))
+    k = min(k, X.shape[1])
+    selector = SelectKBest(chi2, k=k).fit(X, y)
+    return selector.transform(X), selector
