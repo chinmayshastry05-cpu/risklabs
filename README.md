@@ -38,23 +38,42 @@ This is a college academic prototype. It is **not** financial advice, and it doe
               +---------------+---------------+
               |                               |
    +---------------------+        +---------------------+
-   | MODEL A             |        | MODEL B             |
-   | RandomForest        |  vs    | RandomForest        |
-   | ratios only         |        | ratios + lexicon    |
-   | (baseline)          |        | + TF-IDF            |
-   +----------+----------+        +----------+----------+
-              |                               |
-              +--> accuracy / precision / recall / F1 / ROC-AUC (macro, OvR)
+   | FEATURE SET A       |        | FEATURE SET B       |
+   | 7 ratios only       |        | ratios + lexicon    |
+   +----------+----------+        | + TF-IDF            |
+              |                   +----------+----------+
+              |                              |
+              +------- CLASSIFIERS (same split, same protocol) ------+
+              |  rf: RandomForest (original baseline)                |
+              |  lr: LogisticRegression + scaler (simple baseline)    |
+              |  xgb: XGBoost (stronger tree baseline)               |
+              +---------------+---------------+
                               |
-                  SHAP (TreeExplainer, per predicted class)
+              +--> accuracy / per-class P-R-F1 / macro & weighted F1 /
+                   ROC-AUC (OvR) / High-risk precision-recall /
+                   confusion matrix / classification report / ECE
+                              |
+              +--> probability calibration (sigmoid, 5-fold CV) on the
+                   two RandomForest models — exposed SEPARATELY as
+                   "Calibrated Model Probability"
+                              |
+                  SHAP (TreeExplainer, per predicted class; base RF only)
                               |
               +---------------+---------------+
-              |  DASHBOARD (Streamlit)        |
-              |  risk level + 0-100 score,    |
-              |  A-vs-B comparison, category  |
-              |  sub-scores (heuristic), top   |
-              |  SHAP reasons, plain-English  |
-              |  explanation paragraph        |
+              |  DASHBOARD (Streamlit, 3 tabs)|
+              |  1. Analyze company: risk     |
+              |     classification, model     |
+              |     probabilities (raw +      |
+              |     calibrated), risk score,  |
+              |     heuristic indicators,     |
+              |     SHAP waterfall + reasons  |
+              |  2. Model comparison: table,  |
+              |     confusion matrices,       |
+              |     calibration, temporal     |
+              |     validation plan           |
+              |  3. Risk trend: multi-year    |
+              |     trajectory (needs real    |
+              |     longitudinal data)        |
               +-------------------------------+
 ```
 
@@ -66,18 +85,40 @@ risklabs/
 ├── VIVA.md                          # viva / exam prep Q&A
 ├── SPEC.md                          # internal build spec (for contributors)
 ├── PROGRESS.md                      # build progress log (do not edit by hand)
-├── requirements.txt                 # pandas, numpy, scikit-learn, streamlit,
-│                                    # pymupdf, shap, joblib
-├── app.py                           # Streamlit dashboard (main demo)
+├── requirements.txt                 # pandas, numpy, scikit-learn, xgboost,
+│                                    # streamlit, pymupdf, shap, joblib,
+│                                    # matplotlib, pytest
+├── app.py                           # Streamlit dashboard (main demo):
+│                                    # Analyze / Model comparison / Risk trend tabs
 ├── src/
 │   ├── features.py                  # compute_ratios / compute_ratios_dict
 │   ├── nlp.py                       # LEXICON, extract_lexicon_features,
-│   │                                # RiskTextVectorizer (TF-IDF wrapper)
-│   ├── train.py                     # trains Model A and Model B, writes
+│   │                                # RiskTextVectorizer (TF-IDF wrapper),
+│   │                                # text_feature_report, select_text_features
+│   ├── train.py                     # trains 6 classifier×feature-set combos +
+│   │                                # calibrates the 2 RF models; writes
 │   │                                # metrics.json + all artifacts
-│   ├── explain.py                   # SHAP explanations, risk score, text
+│   ├── evaluate.py                  # full metric protocol: confusion matrix,
+│   │                                # per-class/macro/weighted P-R-F1, ROC-AUC,
+│   │                                # High-risk P/R, ECE, calibration helpers
+│   ├── explain.py                   # SHAP explanations (with feature-family
+│   │                                # tags), traceable factor sentences,
+│   │                                # waterfall figure, risk score, text
 │   │                                # paragraph (reasons_to_text)
-│   └── pdf_parse.py                 # extract_text_from_pdf, sample PDF demo
+│   ├── temporal.py                  # out-of-time validation framework
+│   │                                # (needs real longitudinal data)
+│   ├── trends.py                    # multi-year risk-trend scoring
+│   │                                # (needs real longitudinal data)
+│   └── pdf_parse.py                 # extract_report / extract_text_from_pdf
+│                                    # (tables, cleaning, robust errors),
+│                                    # sample PDF demo
+├── tests/
+│   └── test_pipeline.py             # pytest smoke tests (features, NLP, PDF,
+│                                    # evaluation, temporal, trends, explain,
+│                                    # artifacts)
+├── experiments/
+│   └── nlp_ablation.py              # analysis-only: why Model B < Model A
+│                                    # (writes no artifacts)
 ├── data/
 │   ├── generate_dataset.py          # builds the synthetic dataset; prints
 │   │                                # and documents the labeling rules
@@ -85,13 +126,20 @@ risklabs/
 │   │                                # report_text, risk_label
 │   └── sample_report.pdf            # GENERATED demo PDF (synthetic risky co.)
 └── models/                          # GENERATED by src/train.py
-    ├── model_a.pkl                  # RandomForest on ratios only
+    ├── model_a.pkl                  # RandomForest on ratios only (original)
     ├── model_b.pkl                  # RandomForest on ratios + lexicon + TF-IDF
+    ├── model_a_lr.pkl / model_b_lr.pkl      # LogisticRegression baselines
+    ├── model_a_xgb.pkl / model_b_xgb.pkl    # XGBoost baselines
+    ├── model_a_calibrated.pkl / model_b_calibrated.pkl  # calibrated RF
+    │                                # (display probabilities only)
     ├── tfidf_vectorizer.pkl         # fitted RiskTextVectorizer
     ├── feature_names.json           # {"financial": [...], "lexicon": [...], "tfidf": [...]}
     ├── median_profile.json          # median of the 9 raw financial columns
     │                                # (defaults for PDF mode in the app)
-    └── metrics.json                 # A-vs-B metrics + label_map + data note
+    └── metrics.json                 # full per-model metrics (confusion
+                                     # matrices, per-class P/R/F1, High-risk
+                                     # P/R, ECE, calibration) + legacy flat
+                                     # model_a/model_b keys + data note
 ```
 
 Files marked GENERATED are produced by running the scripts, not hand-written.
@@ -112,28 +160,92 @@ python data/generate_dataset.py
 # writes data/risklabs_synthetic.csv (1200 rows)
 ```
 
-**2. Train both models** (prints the A-vs-B comparison table):
+**2. Train all models** (prints the classifier × feature-set comparison table):
 
 ```bash
 python src/train.py
-# writes models/model_a.pkl, models/model_b.pkl, models/tfidf_vectorizer.pkl,
-#        models/feature_names.json, models/median_profile.json, models/metrics.json
+# trains 6 combos (RF/LogReg/XGBoost × ratios / ratios+text), calibrates the
+# 2 RandomForest models, and writes all models/*.pkl + metrics.json
 ```
 
-**3. PDF demo** (builds a sample PDF, extracts its text, prints a preview):
+**3. Run the test suite:**
+
+```bash
+python -m pytest tests/ -q
+# fast smoke tests: features, NLP, PDF, evaluation, temporal, trends,
+# explanations, artifact consistency
+```
+
+**4. (Optional) Reproduce the NLP investigation:**
+
+```bash
+python experiments/nlp_ablation.py
+# analysis only — explains why Model B underperforms Model A here;
+# writes no artifacts
+```
+
+**5. PDF demo** (builds a sample PDF, extracts its text, prints a preview):
 
 ```bash
 python src/pdf_parse.py
 # writes data/sample_report.pdf, prints char count + first 400 chars
 ```
 
-**4. Launch the dashboard:**
+**6. Launch the dashboard:**
 
 ```bash
 streamlit run app.py
 ```
 
-Then either enter financial numbers manually (optional report excerpt) or upload a PDF report. The app runs **both** models, shows the risk level (Low/Medium/High), the 0–100 risk score, the A-vs-B comparison, heuristic category sub-scores, the top SHAP reasons, and a plain-English explanation paragraph.
+Then either enter financial numbers manually (optional report excerpt) or upload a PDF report. The app runs **both** models and shows, with explicit labels:
+
+- **Risk Classification** (Low/Medium/High) — the argmax decision
+- **Model Probability** — the classifier's raw per-class probabilities
+- **Calibrated Model Probability** — sigmoid/5-fold-CV adjusted probabilities for display
+- **Risk Score (0–100)** — `100 × (0·P(Low) + 0.5·P(Medium) + 1·P(High))`, a summary of the model's probability distribution, **not** a calibrated real-world default probability
+- **Heuristic Risk Indicators** — transparent 0–100 liquidity/leverage/profitability/operational sub-scores (documented formulas, **not** model output, **not** probabilities)
+- SHAP waterfall chart + top reasons with feature-family tags (financial vs lexicon vs TF-IDF) + a plain-English paragraph where every sentence traces to a SHAP reason
+
+The **Model comparison** tab shows the full classifier × feature-set table, confusion matrices, classification reports, calibration results and the temporal-validation plan. The **Risk trend** tab scores multi-year company histories (you supply the yearly financials) — it computes nothing from the shipped dataset, which is a single cross-section.
+
+## Evaluation methodology
+
+Every classifier is trained on the **same** stratified 80/20 split (`random_state=42`) and evaluated with the **same** protocol (`src/evaluate.py`), so metric gaps isolate the classifier and the feature set — never the split:
+
+- accuracy, confusion matrix (rows = true, cols = predicted)
+- per-class precision / recall / F1 (with support)
+- macro and weighted precision / recall / F1
+- ROC-AUC (one-vs-rest)
+- **High-risk precision and High-risk recall** — the business-critical minority signal (a missed High-risk company costs more than a false alarm)
+- expected calibration error (ECE) of the predicted probabilities
+- full `classification_report` text
+
+The original Model A vs Model B framing is preserved: **Model A** = RandomForest on ratios only, **Model B** = RandomForest on ratios + text, same split as before. The new classifiers extend the comparison; they don't replace it.
+
+## Why RandomForest, and why the extra baselines
+
+RandomForest remains the primary model: with ~1,200 rows of low-dimensional tabular features there is no data regime that justifies deep learning, and RF handles non-linear ratio interactions without scaling, gives probabilistic outputs, and works natively with SHAP's exact TreeExplainer. LogisticRegression (with a StandardScaler pipeline) is the *simple* baseline — it tests whether the signal is even linear. XGBoost is the *stronger tree* baseline — gradient boosting typically squeezes more out of tabular data than bagging and handles noisy high-dimensional text features more gracefully (it can learn to ignore them). No deep-learning models were added: there is no technical justification at this scale.
+
+## Probability calibration
+
+Raw classifier probabilities are shown as **Model Probability**. Separately, both RandomForest models are wrapped in `CalibratedClassifierCV` (sigmoid, 5-fold CV) and their probabilities exposed as **Calibrated Model Probability**. Calibration quality is measured by ECE before/after and reported in `metrics.json` and the dashboard. SHAP explanations always use the *uncalibrated* base model (SHAP needs the tree ensemble, not the calibration wrapper). The 0–100 **Risk Score** is a weighted summary of the probability distribution — it is never presented as a calibrated real-world default frequency.
+
+## Why Model B (ratios + text) does not beat Model A here
+
+This result is **not hidden** — it is the most instructive finding in the repo. `experiments/nlp_ablation.py` reproduces it under the same split:
+
+1. **The label rule gives text little to say.** Labels are 90/100 ratio-driven and 10/100 `lex_total`-driven *by construction* (synthetic data). Ratios nearly determine the label, so text can add almost nothing.
+2. **TF-IDF dilutes the trees.** ~39% of the Model B RandomForest's feature-importance mass sits on the 500 TF-IDF terms, but only 2 terms exceed 1% importance — the mass is spread thin over template filler ("growth", "healthy", "revenue"). The trees waste splits on noise.
+3. **Redundancy.** 124 of the 500 TF-IDF terms overlap lexicon phrases — the same signal encoded twice, once noisily.
+4. **The lexicon is already the distilled signal.** Adding lexicon features to RF also slightly *hurts* (0.9583 → 0.9458), while scaled LogisticRegression *improves* with them (0.9458 → 0.9583): linear models with proper scaling handle the text block better than trees do here.
+5. **Selection helps.** Chi2 top-100 TF-IDF + LogisticRegression reaches 0.9625 accuracy — the best linear variant — showing text *can* help with scaling + selection, but the default full-TF-IDF RandomForest is the wrong vehicle.
+6. **The effect is classifier-dependent.** XGBoost on the text-enriched set scores **0.9708 vs 0.9542 on ratios alone** — a stronger tree model that learns to ignore noisy features *does* extract value from the text block. So "B < A" holds for the original RandomForest setup (the research-question experiment, reported as-is), but not universally.
+
+The deeper honesty: the synthetic report texts are template-generated from the same latent tiers as the labels, so they **cannot contain independent information by construction**. Whether text helps on *real* reports remains an open question for real data — which is exactly why the TF-IDF + lexicon baseline is kept transparent and the module exposes a clean `transform()` interface for future embeddings.
+
+## Temporal validation plan
+
+The current random split is kept as the baseline experiment, but `src/temporal.py` implements the framework for real longitudinal data: `temporal_split()` (older years → train, later → validation, most recent → test), `walk_forward_splits()` (expanding train window, rolling test window), and `validate_temporal_columns()` which **refuses** to run on data without a real `report_year` column. Temporal validation matters because random splits are optimistic for risk models: they permit look-ahead bias (post-outcome information leaking into features) and ignore regime drift. With real data, labels must be outcomes observed *after* the report date (e.g. default within 2 years). The synthetic dataset has no year column, so this plan is documented infrastructure — not a claim of executed temporal validation.
 
 ## Where real data plugs in
 
@@ -143,5 +255,6 @@ The pipeline is deliberately data-agnostic. To move from synthetic to real data:
 2. **Labels must come from real outcomes, not from the input signals.** Valid label sources: default/bankruptcy filings, credit-rating downgrades, auditor "going concern" qualifications, or regulatory stress-test grades — each with a documented time lag between the report date and the outcome (to avoid lookahead bias).
 3. **Drop the synthetic generator.** Once real data is in, `data/generate_dataset.py` is no longer used; the labeling-rule code in it must be deleted or clearly archived, since real labels replace it entirely.
 4. **Re-run the pipeline unchanged:** `python src/train.py`, then `streamlit run app.py`. All artifacts regenerate.
+5. **Add a `report_year` column** to the real CSV and use `src/temporal.py` for out-of-time validation (older years → train, later → validation, most recent → test) instead of relying on the random split. If you have multiple years per company, the dashboard's Risk trend tab (`src/trends.py`) will score the trajectory.
 
-**Academic honesty note:** with synthetic data, the A-vs-B metrics in `metrics.json` demonstrate that the *pipeline* (feature engineering → training → explanation → dashboard) is correct and that text features add signal *in this controlled setting*. They do **not** demonstrate real-world predictive power — that claim requires real labeled data and out-of-time validation, which is listed as the primary future work in `VIVA.md`.
+**Academic honesty note:** with synthetic data, the metrics in `metrics.json` demonstrate that the *pipeline* (feature engineering → training → explanation → dashboard) is correct. They do **not** demonstrate real-world predictive power — and on this synthetic data the text features do **not** add signal (Model B underperforms Model A; see "Why Model B does not beat Model A" above). That claim requires real labeled data and out-of-time validation, which is listed as the primary future work in `VIVA.md`.
