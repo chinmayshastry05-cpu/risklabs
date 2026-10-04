@@ -1,4 +1,342 @@
 {
+  "models": {
+    "rf_a": {
+      "accuracy": 0.9583,
+      "confusion_matrix": [
+        [
+          103,
+          7,
+          0
+        ],
+        [
+          3,
+          65,
+          0
+        ],
+        [
+          0,
+          0,
+          62
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "per_class": {
+        "Low": {
+          "precision": 0.9717,
+          "recall": 0.9364,
+          "f1": 0.9537,
+          "support": 110
+        },
+        "Medium": {
+          "precision": 0.9028,
+          "recall": 0.9559,
+          "f1": 0.9286,
+          "support": 68
+        },
+        "High": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 62
+        }
+      },
+      "precision_macro": 0.9582,
+      "recall_macro": 0.9641,
+      "f1_macro": 0.9608,
+      "precision_weighted": 0.9595,
+      "recall_weighted": 0.9583,
+      "f1_weighted": 0.9585,
+      "roc_auc_ovr": 0.9962,
+      "high_risk_precision": 1.0,
+      "high_risk_recall": 1.0,
+      "ece": 0.0387,
+      "classification_report": "              precision    recall  f1-score   support\n\n         Low     0.9717    0.9364    0.9537       110\n      Medium     0.9028    0.9559    0.9286        68\n        High     1.0000    1.0000    1.0000        62\n\n    accuracy                         0.9583       240\n   macro avg     0.9582    0.9641    0.9608       240\nweighted avg     0.9595    0.9583    0.9585       240\n"
+    },
+    "lr_a": {
+      "accuracy": 0.9458,
+      "confusion_matrix": [
+        [
+          100,
+          10,
+          0
+        ],
+        [
+          3,
+          65,
+          0
+        ],
+        [
+          0,
+          0,
+          62
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "per_class": {
+        "Low": {
+          "precision": 0.9709,
+          "recall": 0.9091,
+          "f1": 0.939,
+          "support": 110
+        },
+        "Medium": {
+          "precision": 0.8667,
+          "recall": 0.9559,
+          "f1": 0.9091,
+          "support": 68
+        },
+        "High": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 62
+        }
+      },
+      "precision_macro": 0.9458,
+      "recall_macro": 0.955,
+      "f1_macro": 0.9494,
+      "precision_weighted": 0.9489,
+      "recall_weighted": 0.9458,
+      "f1_weighted": 0.9463,
+      "roc_auc_ovr": 0.9955,
+      "high_risk_precision": 1.0,
+      "high_risk_recall": 1.0,
+      "ece": 0.0277,
+      "classification_report": "              precision    recall  f1-score   support\n\n         Low     0.9709    0.9091    0.9390       110\n      Medium     0.8667    0.9559    0.9091        68\n        High     1.0000    1.0000    1.0000        62\n\n    accuracy                         0.9458       240\n   macro avg     0.9458    0.9550    0.9494       240\nweighted avg     0.9489    0.9458    0.9463       240\n"
+    },
+    "xgb_a": {
+      "accuracy": 0.9542,
+      "confusion_matrix": [
+        [
+          105,
+          5,
+          0
+        ],
+        [
+          6,
+          62,
+          0
+        ],
+        [
+          0,
+          0,
+          62
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "per_class": {
+        "Low": {
+          "precision": 0.9459,
+          "recall": 0.9545,
+          "f1": 0.9502,
+          "support": 110
+        },
+        "Medium": {
+          "precision": 0.9254,
+          "recall": 0.9118,
+          "f1": 0.9185,
+          "support": 68
+        },
+        "High": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 62
+        }
+      },
+      "precision_macro": 0.9571,
+      "recall_macro": 0.9554,
+      "f1_macro": 0.9562,
+      "precision_weighted": 0.9541,
+      "recall_weighted": 0.9542,
+      "f1_weighted": 0.9541,
+      "roc_auc_ovr": 0.9955,
+      "high_risk_precision": 1.0,
+      "high_risk_recall": 1.0,
+      "ece": 0.0423,
+      "classification_report": "              precision    recall  f1-score   support\n\n         Low     0.9459    0.9545    0.9502       110\n      Medium     0.9254    0.9118    0.9185        68\n        High     1.0000    1.0000    1.0000        62\n\n    accuracy                         0.9542       240\n   macro avg     0.9571    0.9554    0.9562       240\nweighted avg     0.9541    0.9542    0.9541       240\n"
+    },
+    "rf_b": {
+      "accuracy": 0.9458,
+      "confusion_matrix": [
+        [
+          97,
+          13,
+          0
+        ],
+        [
+          0,
+          68,
+          0
+        ],
+        [
+          0,
+          0,
+          62
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "per_class": {
+        "Low": {
+          "precision": 1.0,
+          "recall": 0.8818,
+          "f1": 0.9372,
+          "support": 110
+        },
+        "Medium": {
+          "precision": 0.8395,
+          "recall": 1.0,
+          "f1": 0.9128,
+          "support": 68
+        },
+        "High": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 62
+        }
+      },
+      "precision_macro": 0.9465,
+      "recall_macro": 0.9606,
+      "f1_macro": 0.95,
+      "precision_weighted": 0.9545,
+      "recall_weighted": 0.9458,
+      "f1_weighted": 0.9465,
+      "roc_auc_ovr": 0.9858,
+      "high_risk_precision": 1.0,
+      "high_risk_recall": 1.0,
+      "ece": 0.0853,
+      "classification_report": "              precision    recall  f1-score   support\n\n         Low     1.0000    0.8818    0.9372       110\n      Medium     0.8395    1.0000    0.9128        68\n        High     1.0000    1.0000    1.0000        62\n\n    accuracy                         0.9458       240\n   macro avg     0.9465    0.9606    0.9500       240\nweighted avg     0.9545    0.9458    0.9465       240\n"
+    },
+    "lr_b": {
+      "accuracy": 0.9417,
+      "confusion_matrix": [
+        [
+          101,
+          9,
+          0
+        ],
+        [
+          3,
+          65,
+          0
+        ],
+        [
+          0,
+          2,
+          60
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "per_class": {
+        "Low": {
+          "precision": 0.9712,
+          "recall": 0.9182,
+          "f1": 0.9439,
+          "support": 110
+        },
+        "Medium": {
+          "precision": 0.8553,
+          "recall": 0.9559,
+          "f1": 0.9028,
+          "support": 68
+        },
+        "High": {
+          "precision": 1.0,
+          "recall": 0.9677,
+          "f1": 0.9836,
+          "support": 62
+        }
+      },
+      "precision_macro": 0.9421,
+      "recall_macro": 0.9473,
+      "f1_macro": 0.9434,
+      "precision_weighted": 0.9458,
+      "recall_weighted": 0.9417,
+      "f1_weighted": 0.9425,
+      "roc_auc_ovr": 0.9885,
+      "high_risk_precision": 1.0,
+      "high_risk_recall": 0.9677,
+      "ece": 0.0286,
+      "classification_report": "              precision    recall  f1-score   support\n\n         Low     0.9712    0.9182    0.9439       110\n      Medium     0.8553    0.9559    0.9028        68\n        High     1.0000    0.9677    0.9836        62\n\n    accuracy                         0.9417       240\n   macro avg     0.9421    0.9473    0.9434       240\nweighted avg     0.9458    0.9417    0.9425       240\n"
+    },
+    "xgb_b": {
+      "accuracy": 0.9708,
+      "confusion_matrix": [
+        [
+          104,
+          6,
+          0
+        ],
+        [
+          1,
+          67,
+          0
+        ],
+        [
+          0,
+          0,
+          62
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "per_class": {
+        "Low": {
+          "precision": 0.9905,
+          "recall": 0.9455,
+          "f1": 0.9674,
+          "support": 110
+        },
+        "Medium": {
+          "precision": 0.9178,
+          "recall": 0.9853,
+          "f1": 0.9504,
+          "support": 68
+        },
+        "High": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 62
+        }
+      },
+      "precision_macro": 0.9694,
+      "recall_macro": 0.9769,
+      "f1_macro": 0.9726,
+      "precision_weighted": 0.9723,
+      "recall_weighted": 0.9708,
+      "f1_weighted": 0.971,
+      "roc_auc_ovr": 0.9973,
+      "high_risk_precision": 1.0,
+      "high_risk_recall": 1.0,
+      "ece": 0.023,
+      "classification_report": "              precision    recall  f1-score   support\n\n         Low     0.9905    0.9455    0.9674       110\n      Medium     0.9178    0.9853    0.9504        68\n        High     1.0000    1.0000    1.0000        62\n\n    accuracy                         0.9708       240\n   macro avg     0.9694    0.9769    0.9726       240\nweighted avg     0.9723    0.9708    0.9710       240\n"
+    }
+  },
   "model_a": {
     "accuracy": 0.9583,
     "precision_macro": 0.9582,
@@ -13,6 +351,18 @@
     "f1_macro": 0.95,
     "roc_auc_ovr": 0.9858
   },
+  "calibration": {
+    "rf_a": {
+      "ece_before": 0.0387,
+      "ece_after": 0.0382,
+      "accuracy_after": 0.9542
+    },
+    "rf_b": {
+      "ece_before": 0.0853,
+      "ece_after": 0.0332,
+      "accuracy_after": 0.9458
+    }
+  },
   "n_train": 960,
   "n_test": 240,
   "label_map": {
@@ -20,5 +370,20 @@
     "Medium": 1,
     "High": 2
   },
+  "label_names": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "classifiers": [
+    "rf",
+    "lr",
+    "xgb"
+  ],
+  "feature_sets": {
+    "a": "financial ratios only",
+    "b": "ratios + lexicon + TF-IDF"
+  },
+  "split": "stratified 80/20, random_state=42 (random-split baseline; see src/temporal.py for the out-of-time framework)",
   "note": "Metrics on SYNTHETIC data \u2014 for pipeline validation only."
 }

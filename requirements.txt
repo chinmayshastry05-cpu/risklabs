@@ -1,7 +1,10 @@
 joblib==1.6.0
+matplotlib==3.11.2
 numpy==2.5.3
 pandas==3.0.6
 pymupdf==1.28.2
+pytest==9.1.1
 scikit-learn==1.9.1
 shap==0.52.0
 streamlit==1.64.0
+xgboost==3.4.1
