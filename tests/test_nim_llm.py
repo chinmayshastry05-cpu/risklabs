@@ -93,3 +93,85 @@ def test_cache_hit_is_labelled_cache(tmp_path):
     client._transport = boom
     result = client.extract_signals(CHUNK, report_id="TEST-FY24")
     assert result.origin == "cache"
+
+
+# --- regression: strict validation (independent review, 2026-10-20) ---
+
+_validate = NimClient._validate
+
+
+def test_signals_null_is_schema_error_not_typeerror():
+    with pytest.raises(NimError):
+        _validate({"signals": None}, CHUNK)
+
+
+def test_signals_wrong_container_types():
+    for bad in ("text", 42, {"category": "legal"}):
+        with pytest.raises(NimError):
+            _validate({"signals": bad}, CHUNK)
+
+
+def test_signals_missing_and_toplevel_not_dict():
+    with pytest.raises(NimError):
+        _validate({"overall_assessment": "x"}, CHUNK)
+    with pytest.raises(NimError):
+        _validate(["not", "a", "dict"], CHUNK)
+
+
+def test_going_concern_flag_string_is_not_truthy():
+    for bad in ("false", "true", 1, 0, "yes"):
+        r = _validate({"signals": [], "going_concern_flag": bad}, CHUNK)
+        assert r.going_concern_flag is False
+    r = _validate({"signals": [], "going_concern_flag": True}, CHUNK)
+    assert r.going_concern_flag is True
+
+
+def test_bool_and_float_severity_rejected():
+    def one(sev):
+        return _validate({"signals": [
+            {"category": "going_concern", "severity": sev,
+             "evidence_quote": "material uncertainty related to going concern",
+             "explanation": "e"}]}, CHUNK)
+    assert len(one(True).signals) == 0 and one(True).dropped_quotes == 1
+    assert len(one(2.0).signals) == 0
+    assert len(one("2").signals) == 0
+    assert len(one(2).signals) == 1
+
+
+def test_non_dict_signal_items_dropped_not_crash():
+    r = _validate({"signals": [None, "x", 7]}, CHUNK)
+    assert r.signals == [] and r.dropped_quotes == 3
+
+
+def test_assessment_must_be_string():
+    r = _validate({"signals": [], "overall_assessment": 123}, CHUNK)
+    assert r.overall_assessment == ""
+
+
+def test_unsupported_assessment_withheld():
+    r = _validate({"signals": [
+        {"category": "legal", "severity": 3,
+         "evidence_quote": "this quote is fabricated",
+         "explanation": "e"}],
+        "overall_assessment": "Severe distress."}, CHUNK)
+    assert r.signals == []
+    assert r.overall_assessment == ""
+    assert r.assessment_unsupported is True
+    good = [{"category": "going_concern", "severity": 3,
+             "evidence_quote": "material uncertainty related to going concern",
+             "explanation": "e"}]
+    r2 = _validate({"signals": good,
+                    "overall_assessment": "Contingencies noted."}, CHUNK)
+    assert r2.overall_assessment == "Contingencies noted."
+    assert r2.assessment_unsupported is False
+    r3 = _validate({"signals": [], "overall_assessment": "Fine."}, CHUNK)
+    assert r3.overall_assessment == "" and r3.assessment_unsupported is True
+
+
+def test_signals_null_end_to_end_raises_nimerror():
+    client = NimClient(
+        config=NimConfig(api_key="test"),
+        transport=lambda payload, model: {"choices": [{"message": {
+            "content": '{"signals": null}'}}]})
+    with pytest.raises(NimError):
+        client.extract_signals(CHUNK, report_id="TEST-FY24")

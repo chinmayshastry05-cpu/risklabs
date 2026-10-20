@@ -181,10 +181,32 @@ Files marked GENERATED are produced by running the scripts, not hand-written.
 
 ## Setup
 
+**Supported Python: 3.12** (the pinned requirements are verified on
+CPython 3.12; several pins — e.g. `pandas==3.0.6`, `matplotlib==3.11.2` —
+do not publish wheels for Python 3.10, so a 3.10 install fails by design,
+not by accident). The stored synthetic model pickles (`models/*.pkl`) were
+built with `scikit-learn==1.9.1`; loading them under a different
+scikit-learn version warns and can misbehave, which is why the version is
+pinned exactly.
+
 ```bash
 cd ~/workspace/risklabs
-pip install -r requirements.txt
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt        # full stack (synthetic + real)
 ```
+
+**Real-data-only path** (no synthetic stack, never loads the pickles):
+
+```bash
+pip install -r requirements-real.txt   # pandas/numpy/pymupdf/sklearn/
+                                       # streamlit only
+python -m pytest tests/test_case_study.py tests/test_nim_llm.py
+streamlit run app.py                   # real-data tab is the default view
+```
+
+Verified 2026-10-20 in a clean Python 3.12.3 virtualenv: both requirement
+files install from scratch and the full test suite passes (see
+`docs/verification-2026-10-20.md`).
 
 ## How to run (in order)
 
@@ -326,11 +348,37 @@ risk signals from the actual MD&A / auditor-report / going-concern-note
 excerpts. Every evidence quote is verified verbatim against the source
 chunk; unverifiable quotes are dropped and counted. Results are labelled
 `live` (recorded API response), `cache` (replayed recorded response) or
-`mock` (tests) — see `data/real/llm_run_log.json`. Free-tier limits are
+`mock` (tests) — see `data/real/llm_run_log.json`. Read the run log's
+numbers exactly: the final recorded run processed **17 chunks in total —
+7 live calls and 10 served from cache** (the cache holds responses
+recorded live earlier the same day); it was not 17 fresh live calls. One
+honesty note on the cache: two extraction runs raced the same cache
+directory that day, so re-validating the committed cache files yields 54
+signals / 9 dropped rather than the committed table's 51 / 8 — the
+committed `llm_signals.json` / `llm_features.csv` are the verified
+artifacts (every one of the 51 quotes was independently re-checked
+against the excerpts). JSON validation is strict (container and field
+types; a string `"false"` flag or a bool severity is rejected), and a
+model's free-text overall assessment is withheld whenever no verified
+signal survives to support it — unsupported conclusions are never shown
+as evidence. Free-tier limits are
 real: several listed Nemotron models return 404 for this account and the
 endpoint rate-limits (HTTP 429), so the adapter spaces calls out, retries
 with backoff, and falls back across models. Only public report excerpts are
 ever sent.
+
+**Basis discipline (standalone vs consolidated).** The extracted
+financials are **consolidated** for all three companies. Narrative
+excerpts are tagged per excerpt in `data/real/excerpts_index.json`
+(`basis` + `basis_note`), the tag is shown next to every LLM signal in
+the dashboard, and narrative ratios are never fused or compared with the
+consolidated ratios. This matters in practice: Bajaj Auto's MD&A ratio
+table (Table 7) is **standalone** — its current ratio 1.19 and
+debt-equity 0.03 are standalone figures, not the consolidated 1.30 /
+0.06 computed from the statements; Reliance's MD&A "Financial Ratios"
+list (inventory turnover, return on net worth) likewise follows the
+report's Standalone review. Both auditor-report excerpts and Vodafone
+Idea's going-concern note are consolidated, matching the statements.
 
 **Why no Model A/B comparison on the real cohort:** a fusion comparison
 needs valid outcome labels and a sample size that can support it. Six

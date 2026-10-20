@@ -102,6 +102,8 @@ def main() -> int:
                 "record_id": rec["record_id"], "file": ex["file"],
                 "section": ex["section"], "pdf_pages": ex["pdf_pages"],
                 "chars": len(text),
+                "basis": ex.get("basis", "not labelled"),
+                "basis_note": ex.get("basis_note", ""),
                 "source_pdf_url": manifest[rec["pdf"]]["pdf_url"],
             })
             print(f"excerpt {ex['file']}: {len(text)} chars "

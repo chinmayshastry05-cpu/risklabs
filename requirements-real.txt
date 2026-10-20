@@ -1,0 +1,17 @@
+# Real-data-only requirements — Python 3.12 (see README "Setup").
+#
+# Installs only what the real-data case-study mode needs: the real CSVs,
+# the classical lexicon baseline, the NIM adapter, the extraction/fetch
+# scripts, the case-study tests, and the Streamlit dashboard's real-data
+# tab. It deliberately excludes the synthetic training stack
+# (xgboost / shap / matplotlib) and NEVER loads the synthetic model
+# pickles (models/*.pkl) — the dashboard's real-data tab works without
+# them, and the synthetic tabs simply report that the artifacts are
+# unavailable. Use the full requirements.txt (same Python) for the
+# synthetic pipeline.
+numpy==2.5.3
+pandas==3.0.6
+pymupdf==1.28.2
+scikit-learn==1.9.1
+streamlit==1.64.0
+pytest==9.1.1

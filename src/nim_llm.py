@@ -137,6 +137,10 @@ class ExtractionResult:
     origin: str  # "live" | "cache" | "mock"
     dropped_quotes: int = 0
     raw_signals: int = 0
+    # True when the model offered an overall_assessment but no verified
+    # signal survived to support it: the assessment is then withheld
+    # (overall_assessment == "") and must never be shown as evidence.
+    assessment_unsupported: bool = False
 
 
 class NimError(RuntimeError):
@@ -238,14 +242,29 @@ class NimClient:
 
     @staticmethod
     def _validate(parsed: dict, chunk: str) -> ExtractionResult:
-        if not isinstance(parsed, dict) or "signals" not in parsed:
+        """Strict schema validation of the model's JSON object.
+
+        Container-level problems (not a dict, missing/non-list `signals`)
+        raise NimError. Item-level problems drop that signal and count it.
+        Types are checked strictly: severity must be a real int (bool is a
+        subclass of int in Python and is rejected, as are floats/strings);
+        going_concern_flag must be a real bool (the string "false" is NOT
+        truthy-coerced — anything that is not literally true counts as
+        false); overall_assessment must be a string, and it is withheld
+        entirely when no verified signal survives to support it.
+        """
+        if not isinstance(parsed, dict):
             raise NimError("model response failed schema validation: "
-                           "missing 'signals'")
+                           "top level is not a JSON object")
+        raw = parsed.get("signals")
+        if not isinstance(raw, list):
+            raise NimError("model response failed schema validation: "
+                           "'signals' is missing or is not a list")
         signals, dropped = [], 0
-        for sig in parsed.get("signals", []):
+        for sig in raw:
             if (not isinstance(sig, dict)
                     or sig.get("category") not in CATEGORIES
-                    or not isinstance(sig.get("severity"), int)
+                    or type(sig.get("severity")) is not int
                     or not 0 <= sig["severity"] <= 3
                     or not isinstance(sig.get("evidence_quote"), str)
                     or not isinstance(sig.get("explanation"), str)):
@@ -260,13 +279,20 @@ class NimClient:
                 "evidence_quote": _normalize_ws(sig["evidence_quote"]),
                 "explanation": sig["explanation"].strip(),
             })
+        flag = parsed.get("going_concern_flag")
+        assessment = parsed.get("overall_assessment")
+        assessment = assessment.strip() if isinstance(assessment, str) else ""
+        unsupported = bool(assessment) and not signals
+        if unsupported:
+            assessment = ""  # no verified evidence -> no conclusion shown
         return ExtractionResult(
             signals=signals,
-            overall_assessment=str(parsed.get("overall_assessment", "")).strip(),
-            going_concern_flag=bool(parsed.get("going_concern_flag", False)),
+            overall_assessment=assessment,
+            going_concern_flag=flag if type(flag) is bool else False,
             model="", origin="live",
             dropped_quotes=dropped,
-            raw_signals=len(parsed.get("signals", [])),
+            raw_signals=len(raw),
+            assessment_unsupported=unsupported,
         )
 
     def extract_signals(self, chunk: str, report_id: str,

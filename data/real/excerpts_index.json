@@ -8,6 +8,8 @@
       32
     ],
     "chars": 13634,
+    "basis": "standalone",
+    "basis_note": "MD&A financial discussion on the standalone accounts: Table 6 is the summarised standalone profit and loss statement and Table 7 (PDF p31) is 'Key Financial Ratios, Standalone'. Ratios quoted from this excerpt (current ratio 1.19, debt-equity 0.03) are STANDALONE figures \u2014 they are not the consolidated ratios computed from the statements (current ratio 1.30, debt-to-equity 0.06) and must not be fused or compared with them.",
     "source_pdf_url": "https://investors.bajajauto.com/ar24/wp-content/uploads/2024/06/BAL_Annual_Report_2024.pdf"
   },
   {
@@ -19,6 +21,8 @@
       212
     ],
     "chars": 10708,
+    "basis": "consolidated",
+    "basis_note": "Independent Auditors' Report on the Consolidated Financial Statements \u2014 same basis as the extracted statements.",
     "source_pdf_url": "https://investors.bajajauto.com/ar24/wp-content/uploads/2024/06/BAL_Annual_Report_2024.pdf"
   },
   {
@@ -30,6 +34,8 @@
       11
     ],
     "chars": 14000,
+    "basis": "mixed",
+    "basis_note": "MD&A reviews consolidated and standalone performance, labelled in the full text. The 'Financial Ratios' list quoted in this excerpt (inventory turnover 7.31, return on net worth 10.3%) follows the Standalone review on PDF p8 and is standalone-basis; the basis word does not appear on the excerpt's own pages (PDF pp9-11) \u2014 placement verified against the PDF. Narrative ratios from this list are standalone and must not be fused or compared with the consolidated ratios computed from the statements.",
     "source_pdf_url": "https://www.ril.com/ar2023-24/pdf/RIL_IAR_2024.pdf"
   },
   {
@@ -41,6 +47,8 @@
       106
     ],
     "chars": 14000,
+    "basis": "consolidated",
+    "basis_note": "Report on the Audit of the Consolidated Financial Statements \u2014 same basis as the extracted statements.",
     "source_pdf_url": "https://www.ril.com/ar2023-24/pdf/RIL_IAR_2024.pdf"
   },
   {
@@ -52,6 +60,8 @@
       49
     ],
     "chars": 14000,
+    "basis": "not labelled",
+    "basis_note": "Directors' Report / MD&A risks-and-opportunities narrative; the excerpt carries no basis-labelled ratio table and no extracted signal quotes a financial ratio from it. Narrative figures from this excerpt are not treated as consolidated statement facts.",
     "source_pdf_url": "https://www.myvi.in/documents/106724/171100/VIL-Annual-Report-2023-24.pdf"
   },
   {
@@ -63,6 +73,8 @@
       269
     ],
     "chars": 14000,
+    "basis": "consolidated",
+    "basis_note": "Note to the consolidated financial statements (going-concern basis) \u2014 same basis as the extracted statements.",
     "source_pdf_url": "https://www.myvi.in/documents/106724/171100/VIL-Annual-Report-2023-24.pdf"
   }
 ]

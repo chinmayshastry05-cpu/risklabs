@@ -518,9 +518,19 @@ def real_data_tab():
                 f"{sig['explanation']}  \n"
                 f"  > “{sig['evidence_quote']}”  \n"
                 f"  *Source: {sig['section']} — "
-                f"[annual report]({sig['source_pdf_url']})*")
+                f"[annual report]({sig['source_pdf_url']}) · "
+                f"excerpt basis: {sig.get('excerpt_basis', 'not labelled')}*")
     elif study["excerpt_entries"]:
         st.info("LLM extraction has not been run for this record yet.")
+
+    if study["excerpt_entries"]:
+        st.markdown("**Excerpt scope and basis** (statement basis for the "
+                    "figures above: consolidated)")
+        for e in study["excerpt_entries"]:
+            st.markdown(
+                f"- `{e['file']}` — {e['section']} · basis: "
+                f"**{e.get('basis', 'not labelled')}**  \n"
+                f"  {e.get('basis_note', '')}")
 
     st.markdown("**Limitations for this record**")
     for note in study["limitations"]:
@@ -530,7 +540,10 @@ def real_data_tab():
 def main():
     st.set_page_config(page_title="RiskLabs - Explainable Financial Risk", layout="wide")
     st.title("RiskLabs - Explainable Financial-Risk Prototype")
-    st.caption("Synthetic-data demo for a college project. Educational use only - not financial advice.")
+    st.caption(
+        "Default view: real published annual-report case studies. The "
+        "synthetic-data demo is behind the tabs labelled 'Synthetic demo'. "
+        "Educational use only - not financial advice.")
 
     if _IMPORT_ERROR is not None:
         st.error(
@@ -540,34 +553,40 @@ def main():
         )
         st.stop()
 
+    # The real-data case-study view must work even when the synthetic
+    # model artifacts are absent or were built with another library
+    # version, so artifacts load lazily and only gate the synthetic tabs.
+    artifacts, artifacts_error = None, None
     try:
         artifacts = load_artifacts()
     except Exception as exc:
-        st.error(
-            "Model files are missing or could not be loaded "
-            f"({type(exc).__name__}: {exc}). Training may still be running - "
-            "run `python src/train.py` from the project root, then reload this page."
-        )
-        st.stop()
+        artifacts_error = exc
 
     tab1, tab2, tab3, tab4 = st.tabs(
-        ["Analyze company", "Model comparison", "Risk trend",
-         "Real companies (case study)"])
+        ["Real companies (case study)", "Synthetic demo — analyze",
+         "Synthetic demo — model comparison", "Synthetic demo — risk trend"])
     with tab1:
-        analyze_tab(artifacts)
-    with tab2:
-        comparison_tab(artifacts)
-    with tab3:
-        trend_tab(artifacts)
-    with tab4:
         real_data_tab()
+    for tab, fn in ((tab2, analyze_tab), (tab3, comparison_tab),
+                    (tab4, trend_tab)):
+        with tab:
+            if artifacts is None:
+                st.error(
+                    "Synthetic model files are missing or could not be "
+                    f"loaded ({type(artifacts_error).__name__}: "
+                    f"{artifacts_error}). Run `python src/train.py` from "
+                    "the project root with the pinned requirements, then "
+                    "reload. The real-data case-study tab does not need "
+                    "these files.")
+            else:
+                fn(artifacts)
 
     st.divider()
     st.caption(
-        "**Disclaimer:** RiskLabs is a college project. The Analyze / "
-        "comparison tabs run on synthetic data; the case-study tab assesses "
-        "real published reports historically and makes no prediction. "
-        "For educational use only - not financial advice."
+        "**Disclaimer:** RiskLabs is a college project. The case-study tab "
+        "(default) assesses real published reports historically and makes "
+        "no prediction; the 'Synthetic demo' tabs run on synthetic data "
+        "only. For educational use only - not financial advice."
     )
 
 

@@ -40,3 +40,24 @@ def test_lexicon_baseline_skips_comparative_years():
     study23 = case_study(BASE, cohort, "bajaj_auto_fy2022-23")
     assert study24["lexicon"] is not None
     assert study23["lexicon"] is None  # would be future-text leakage
+
+
+def test_excerpt_basis_attached_and_cautioned():
+    cohort = load_real_cohort(BASE)
+    bajaj = case_study(BASE, cohort, "bajaj_auto_fy2023-24")
+    by_excerpt = {}
+    for s in bajaj["signals"]:
+        by_excerpt.setdefault(s["excerpt_file"], set()).add(s["excerpt_basis"])
+    # MD&A ratio quotes are standalone; the auditor report is consolidated.
+    assert by_excerpt["bajaj_auto_fy2023-24__mda.txt"] == {"standalone"}
+    assert by_excerpt["bajaj_auto_fy2023-24__auditor.txt"] == {"consolidated"}
+    assert any("Basis caution" in n and "standalone" in n
+               for n in bajaj["limitations"])
+    ril = case_study(BASE, cohort, "reliance_fy2023-24")
+    ril_bases = {s["excerpt_file"]: s["excerpt_basis"] for s in ril["signals"]}
+    assert ril_bases["reliance_fy2023-24__discussion.txt"] == "mixed"
+    assert ril_bases["reliance_fy2023-24__auditor.txt"] == "consolidated"
+    vil = case_study(BASE, cohort, "vodafone_idea_fy2023-24")
+    vil_bases = {s["excerpt_file"]: s["excerpt_basis"] for s in vil["signals"]}
+    assert vil_bases["vodafone_idea_fy2023-24__going_concern_note.txt"] == \
+        "consolidated"

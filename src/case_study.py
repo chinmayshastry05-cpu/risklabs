@@ -108,11 +108,39 @@ def case_study(base: Path, cohort: dict, record_id: str) -> dict:
             cohort["llm_features"]["record_id"] == record_id]
         if not match.empty:
             llm_row = match.iloc[0].to_dict()
-    signals = [s for s in cohort["signals"]
-               if s["record_id"] == record_id]
+    signals = []
+    basis_by_file = {}
+    for entries in cohort["excerpts"].values():
+        for e in entries:
+            basis_by_file[e["file"]] = e
+    for s in cohort["signals"]:
+        if s["record_id"] != record_id:
+            continue
+        s = dict(s)
+        entry = basis_by_file.get(s.get("excerpt_file"), {})
+        s["excerpt_basis"] = entry.get("basis", "not labelled")
+        s["excerpt_basis_note"] = entry.get("basis_note", "")
+        signals.append(s)
+    limitations = record_limitations(row)
+    for e in cohort["excerpts"].get(record_id, []):
+        if e.get("basis") in ("standalone", "mixed"):
+            limitations.append(
+                f"Basis caution: excerpt {e['file']} is {e['basis']}-basis "
+                "for its ratio content (see its basis note in "
+                "data/real/excerpts_index.json). Ratios quoted in its "
+                "evidence are narrative figures on that basis — they are "
+                "labelled standalone and are never fused with or compared "
+                "against the consolidated ratios computed from the "
+                "statements above.")
+        elif e.get("basis") == "not labelled":
+            limitations.append(
+                f"Basis note: excerpt {e['file']} carries no basis label "
+                "in the report; no financial ratio is quoted from it, and "
+                "its narrative figures are not treated as consolidated "
+                "statement facts.")
     return {
         "record": row.to_dict(),
-        "limitations": record_limitations(row),
+        "limitations": limitations,
         "lexicon": lexicon_baseline(base, cohort, record_id),
         "llm": llm_row,
         "signals": signals,
