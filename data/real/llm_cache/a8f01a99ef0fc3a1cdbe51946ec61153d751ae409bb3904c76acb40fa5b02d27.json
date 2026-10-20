@@ -1,0 +1,35 @@
+{
+  "report_id": "bajaj_auto_fy2023-24__mda.txt#chunk2",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Profit after tax 7,708 6,060",
+        "explanation": "Profit after tax increased 27% year-over-year indicating strong profitability."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Automotive 44,870 36,665",
+        "explanation": "Automotive segment revenue grew 22% year-over-year reflecting robust demand."
+      },
+      {
+        "category": "profitability",
+        "severity": 1,
+        "evidence_quote": "Financing (25) -",
+        "explanation": "New financing segment incurred a \u20b925 crore loss in its first operating period."
+      },
+      {
+        "category": "operational",
+        "severity": 1,
+        "evidence_quote": "It plans to cover all the balance states by 31 March 2025.",
+        "explanation": "Aggressive nationwide expansion timeline for new NBFC may pose execution risk."
+      }
+    ],
+    "overall_assessment": "Bajaj Auto delivered strong revenue and profit growth in FY2024, though its new captive financing subsidiary reported an initial loss and faces aggressive expansion targets.",
+    "going_concern_flag": false
+  }
+}

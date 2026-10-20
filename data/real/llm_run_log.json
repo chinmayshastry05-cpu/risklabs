@@ -1,0 +1,143 @@
+{
+  "started": "2026-10-20T14:53:24.902678+00:00",
+  "configured_model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "calls": [
+    {
+      "excerpt": "bajaj_auto_fy2023-24__mda.txt",
+      "chunk": 0,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 0,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "bajaj_auto_fy2023-24__mda.txt",
+      "chunk": 1,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 6,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "bajaj_auto_fy2023-24__mda.txt",
+      "chunk": 2,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 4,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "bajaj_auto_fy2023-24__auditor.txt",
+      "chunk": 0,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 1,
+      "dropped_quotes": 1
+    },
+    {
+      "excerpt": "bajaj_auto_fy2023-24__auditor.txt",
+      "chunk": 1,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 0,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "reliance_fy2023-24__discussion.txt",
+      "chunk": 0,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 7,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "reliance_fy2023-24__discussion.txt",
+      "chunk": 1,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 5,
+      "dropped_quotes": 3
+    },
+    {
+      "excerpt": "reliance_fy2023-24__discussion.txt",
+      "chunk": 2,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 3,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "reliance_fy2023-24__auditor.txt",
+      "chunk": 0,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 2,
+      "dropped_quotes": 1
+    },
+    {
+      "excerpt": "reliance_fy2023-24__auditor.txt",
+      "chunk": 1,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 4,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "reliance_fy2023-24__auditor.txt",
+      "chunk": 2,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 1,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "vodafone_idea_fy2023-24__mda.txt",
+      "chunk": 0,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 1,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "vodafone_idea_fy2023-24__mda.txt",
+      "chunk": 1,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 0,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "vodafone_idea_fy2023-24__mda.txt",
+      "chunk": 2,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 0,
+      "dropped_quotes": 0
+    },
+    {
+      "excerpt": "vodafone_idea_fy2023-24__going_concern_note.txt",
+      "chunk": 0,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 5,
+      "dropped_quotes": 1
+    },
+    {
+      "excerpt": "vodafone_idea_fy2023-24__going_concern_note.txt",
+      "chunk": 1,
+      "origin": "cache",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 10,
+      "dropped_quotes": 1
+    },
+    {
+      "excerpt": "vodafone_idea_fy2023-24__going_concern_note.txt",
+      "chunk": 2,
+      "origin": "live",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b",
+      "signals": 2,
+      "dropped_quotes": 1
+    }
+  ],
+  "finished": "2026-10-20T14:59:11.715780+00:00"
+}

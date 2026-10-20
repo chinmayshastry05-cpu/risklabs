@@ -1,0 +1,10 @@
+{
+  "report_id": "bajaj_auto_fy2023-24__mda.txt#chunk0",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [],
+    "overall_assessment": "The excerpt describes positive non-financial initiatives including talent development, high employee engagement, and CSR programs, with no indication of financial risk or going concern issues.",
+    "going_concern_flag": false
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "report_id": "vodafone_idea_fy2023-24__mda.txt#chunk0",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "profitability",
+        "severity": 2,
+        "evidence_quote": "In view of the losses incurred by the Company during the last three financial years, the Company has no obligation for CSR spend during the Financial Year 2023-24.",
+        "explanation": "The company has reported losses for three consecutive years, eliminating CSR obligations and indicating sustained profitability challenges."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "The Audited Financial Statements for the year under review are in conformity with the requirements of the Companies Act, 2013 and the applicable Accounting Standards. The financial statements reflect fairly the form and substance of transactions carried out during the year under review and reasonably present your Company's financial condition and results of operations.",
+        "explanation": "Directors confirm financial statements comply with standards and present a true and fair view."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Your Company continues to be compliant with the requirements of Corporate Governance as enshrined in SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+        "explanation": "Company maintains compliance with corporate governance regulations."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Our continued efforts and focus on our Absolute Safety rules and standards backed by a strong governance mechanism has helped us end the year with Zero work related fatality.",
+        "explanation": "Zero work-related fatalities achieved, indicating strong health and safety performance."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "VIL has been recognized second time in a row for being amongst Top 100 companies for Women in India 2023 by a study conducted by Avtar and Seramount BCWI Study 2023.",
+        "explanation": "Company recognized for gender diversity leadership."
+      }
+    ],
+    "overall_assessment": "The company has incurred losses for three consecutive years, raising profitability concerns, but maintains strong corporate governance, health and safety, and diversity practices. No explicit going concern doubt is raised.",
+    "going_concern_flag": false
+  }
+}

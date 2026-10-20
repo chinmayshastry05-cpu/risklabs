@@ -1,0 +1,47 @@
+{
+  "report_id": "bajaj_auto_fy2023-24__mda.txt#chunk1",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "liquidity",
+        "severity": 1,
+        "evidence_quote": "Current Ratio 1.19 1.71 Increase in trade payable and short term borrowing",
+        "explanation": "Current ratio declined sharply due to higher trade payables and short-term borrowings, indicating potential liquidity pressure."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Surplus cash and cash equivalent as on 31 March 2024 stood at H16,386 crore, after making capital investments of ~H800 crore and paying a significant ~H8,900 crore to shareholders between dividend and the share buyback.",
+        "explanation": "Strong surplus cash position despite substantial shareholder returns and capital investments."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "EBITDA % 19.7% 18.0%",
+        "explanation": "EBITDA margin improved year-over-year, reflecting better operational efficiency."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Return on Equity 29.7% 21.6% Change because of increase in profits during the year",
+        "explanation": "Return on equity increased significantly driven by higher profitability."
+      },
+      {
+        "category": "operational",
+        "severity": 1,
+        "evidence_quote": "For 2023, clocked sales of over 4,300 units, revenue of BRL 75.3 million and net loss of BRL 3.5 million.",
+        "explanation": "Brazil subsidiary reported a net loss in its initial year of operations, though scale is small."
+      },
+      {
+        "category": "leverage",
+        "severity": 0,
+        "evidence_quote": "Debt-Equity Ratio 0.03 0.0",
+        "explanation": "Debt-equity ratio remains negligible despite slight increase, indicating minimal leverage risk."
+      }
+    ],
+    "overall_assessment": "Bajaj Auto demonstrates robust profitability with expanding margins, high ROE, and strong cash generation, but the sharp decline in current ratio due to rising payables and short-term borrowings warrants monitoring; subsidiary losses are immaterial.",
+    "going_concern_flag": false
+  }
+}

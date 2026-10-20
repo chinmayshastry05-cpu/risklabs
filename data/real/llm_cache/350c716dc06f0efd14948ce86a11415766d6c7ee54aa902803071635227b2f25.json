@@ -1,0 +1,10 @@
+{
+  "report_id": "vodafone_idea_fy2023-24__mda.txt#chunk2",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [],
+    "overall_assessment": "The excerpt covers corporate governance matters including board evaluation, remuneration policy, dividend distribution policy, board meetings, and committee structure, with no financial risk signals identified.",
+    "going_concern_flag": false
+  }
+}

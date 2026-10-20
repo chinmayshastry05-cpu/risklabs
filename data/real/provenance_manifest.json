@@ -1,0 +1,47 @@
+[
+  {
+    "company": "Bajaj Auto Limited",
+    "short": "bajaj_auto",
+    "fy": "2023-24",
+    "basis": "consolidated (standalone also in report)",
+    "source_page": "https://investors.bajajauto.com/ar24/",
+    "pdf_url": "https://investors.bajajauto.com/ar24/wp-content/uploads/2024/06/BAL_Annual_Report_2024.pdf",
+    "filename": "bajaj_auto_ar_fy2023-24.pdf",
+    "local_file": "data/real/pdfs/bajaj_auto_ar_fy2023-24.pdf",
+    "bytes": 18647658,
+    "sha256": "02c912620039d849041fe1678410d99596e3acfe87c60e53586807541624e7bc",
+    "pages": 276,
+    "fetched_at": "2026-10-20T14:44:25+00:00",
+    "usage_note": "Publicly accessible company annual report. Linked, not bundled: this PDF is gitignored and is not redistributed by this repo."
+  },
+  {
+    "company": "Reliance Industries Limited",
+    "short": "reliance",
+    "fy": "2023-24",
+    "basis": "consolidated (standalone also in report)",
+    "source_page": "https://www.ril.com/ar2023-24/index.html",
+    "pdf_url": "https://www.ril.com/ar2023-24/pdf/RIL_IAR_2024.pdf",
+    "filename": "reliance_ar_fy2023-24.pdf",
+    "local_file": "data/real/pdfs/reliance_ar_fy2023-24.pdf",
+    "bytes": 15471517,
+    "sha256": "d8e3739d2e06f09b83a192e00cefda0113b5da778483e31018cb35429e72eafe",
+    "pages": 159,
+    "fetched_at": "2026-10-20T14:44:33+00:00",
+    "usage_note": "Publicly accessible company annual report. Linked, not bundled: this PDF is gitignored and is not redistributed by this repo."
+  },
+  {
+    "company": "Vodafone Idea Limited",
+    "short": "vodafone_idea",
+    "fy": "2023-24",
+    "basis": "consolidated (standalone also in report)",
+    "source_page": "https://www.myvi.in/investors/annual-reports",
+    "pdf_url": "https://www.myvi.in/documents/106724/171100/VIL-Annual-Report-2023-24.pdf",
+    "filename": "vodafone_idea_ar_fy2023-24.pdf",
+    "local_file": "data/real/pdfs/vodafone_idea_ar_fy2023-24.pdf",
+    "bytes": 5077940,
+    "sha256": "a735bbab1e2c5748b13b4295224094f1453ec203ab8473665c0f0a1a78ee67dc",
+    "pages": 338,
+    "fetched_at": "2026-10-20T14:44:39+00:00",
+    "usage_note": "Publicly accessible company annual report. Linked, not bundled: this PDF is gitignored and is not redistributed by this repo."
+  }
+]

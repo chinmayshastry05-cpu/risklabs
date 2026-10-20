@@ -1,0 +1,77 @@
+{
+  "report_id": "vodafone_idea_fy2023-24__going_concern_note.txt#chunk1",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "going_concern",
+        "severity": 3,
+        "evidence_quote": "The Group has incurred a loss of ` 312,384 Mn for the year ended March 31, 2024. Its net worth stands at negative ` 1,041,668 Mn and the Net Working Capital (excluding short term borrowings, future lease liability and certain accruals toward pending litigations) stands at negative ` 203,518 Mn.",
+        "explanation": "Negative net worth and working capital alongside large annual loss indicate severe financial distress."
+      },
+      {
+        "category": "leverage",
+        "severity": 3,
+        "evidence_quote": "As at March 31, 2024, the outstanding debt from banks and others (including interest accrued but not due) of the Group is ` 42,126 Mn and the deferred payment obligation amount towards Spectrum and AGR (including interest accrued but not due) of the Group is ` 2,114,713 Mn.",
+        "explanation": "Total deferred payment obligations exceed \u20b92.1 trillion, dwarfing bank debt and signaling extreme leverage."
+      },
+      {
+        "category": "credit",
+        "severity": 2,
+        "evidence_quote": "As at March 31, 2024, an amount of ` 23,636 Mn (March 31, 2023: ` 39,271 Mn) has been reclassified from non-current borrowings of loans from banks and others to current maturities of long-term debt of loans from banks and others for not meeting certain covenant clauses under the financial agreements.",
+        "explanation": "Covenant breaches forced reclassification of \u20b923.6 billion to current liabilities, increasing near-term repayment pressure."
+      },
+      {
+        "category": "credit",
+        "severity": 2,
+        "evidence_quote": "The Group has exchanged correspondences and continues to be in discussion with the lenders for next steps/waivers.",
+        "explanation": "Ongoing negotiations for waivers indicate lenders' concern and potential restructuring risk."
+      },
+      {
+        "category": "operational",
+        "severity": 2,
+        "evidence_quote": "As of date, the Group has met all its debt obligations payable to its lenders / banks and financial institutions along with applicable interest. The Company has utilized extended credit period to discharge some of its contractual obligations. Further, certain vendors have asked for payment of their overdue outstanding. The Company continues to be in discussion with them to agree to a payment plan.",
+        "explanation": "Reliance on extended credit terms and vendor overdues signal strained operational cash flows."
+      },
+      {
+        "category": "operational",
+        "severity": 2,
+        "evidence_quote": "The Company is also required to provide bank guarantees at least 13 months prior to each of the instalment becoming due post the moratorium period i.e. from October 2025 and at each of the relevant dates till September 2026 which aggregates to ` 247,469 Mn or seek a waiver from DoT for providing bank guarantees considering that the requirement of bank guarantees has been removed from the",
+        "explanation": "Need for \u20b9247.5 billion in bank guarantees from October 2025 creates a massive future liquidity requirement."
+      },
+      {
+        "category": "legal",
+        "severity": 1,
+        "evidence_quote": "During the year, the Company filed Curative Petition to allow correction of manifest/clerical and arithmetical errors in the provisional demands raised by DoT. The matter is currently pending.",
+        "explanation": "Pending curative petition on AGR demands adds uncertainty to final liability amount."
+      },
+      {
+        "category": "legal",
+        "severity": 1,
+        "evidence_quote": "On April 4, 2024, the Company has filed affidavit with Honourable Supreme Court including the compliance letter stating that by acceptance of the deferment option and agreeing to moratorium of AGR dues for four years, it has complied with Court order dated September 1, 2020.",
+        "explanation": "Supreme Court compliance filing reduces immediate legal risk but long-term AGR liability remains."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Further to address liquidity requirements, the Cabinet has also approved deferment of AGR dues which are payable in annual instalments as determined by the Honourable Supreme Court for up to four years without any change in the instalment period and deferment of spectrum auction instalments payable from October 1, 2021 to September 30, 2025 excluding the instalments due for spectrum auction 2021 and 2022. It also provided upfront conversion of the interest amount arising due to such deferment into equity.",
+        "explanation": "Government relief package provides multi-year moratorium and equity conversion, easing near-term cash outflows."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Consequent to the above, the Company has derecognised the loan liability of ` 161,332 Mn due to the issuance of 16,133,184,899 equity shares at an issue price of ` 10 each amounting to ` 161,332 Mn, and consequential adjustment of ` 3,305 Mn has been adjusted to Other equity.",
+        "explanation": "Conversion of \u20b9161.3 billion interest liability into equity reduces debt burden significantly."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "As on March 31, 2024, the promoter shareholding of Vodafone group and Aditya Birla group is 48.91 % and GoI is 32.19%.",
+        "explanation": "Government's 32.19% stake aligns state support with company survival."
+      }
+    ],
+    "overall_assessment": "Vodafone Idea exhibits severe financial distress with negative net worth of \u20b91.04 trillion, negative working capital, and a \u20b9312 billion annual loss, offset only by substantial government support including AGR/spectrum moratoriums and equity conversion of interest liabilities. Covenant breaches, vendor overdues, and a looming \u20b9247 billion bank guarantee requirement from October 2025 create acute liquidity risk despite current debt service being met.",
+    "going_concern_flag": false
+  }
+}

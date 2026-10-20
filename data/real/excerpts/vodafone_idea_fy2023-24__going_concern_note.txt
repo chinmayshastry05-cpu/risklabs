@@ -1,0 +1,358 @@
+260
+VODAFONE IDEA LIMITED
+NOTES
+forming part of the Consolidated Financial Statements
+
+The financial statements of the following entities in the Group are prepared using uniform accounting policies and are drawn up
+to the same accounting period as that of the Group.
+Sr.
+No.
+Name of the Company
+Relationship
+Voting Power % as at
+March 31, 2024
+March 31, 2023
+1
+Vodafone Idea Manpower Services Limited (‘VIMSL’)
+Subsidiary
+100.00
+100.00
+2
+Vodafone Idea Telecom Infrastructure Limited (‘VITIL’)
+Subsidiary
+100.00
+100.00
+3
+Vodafone Idea Business Services Limited (‘VIBSL’)
+Subsidiary
+100.00
+100.00
+4
+Vodafone Idea Communication Systems Limited (‘VICSL’)
+Subsidiary
+100.00
+100.00
+5
+Vodafone Foundation (‘VF’) (Registered under section 8 of
+Companies Act, 2013)
+Subsidiary
+100.00
+100.00
+6
+Vodafone m-pesa Limited (‘VMPL’)
+Subsidiary
+100.00
+100.00
+7
+Vodafone Idea Technology Solutions Limited (‘VITSL’)
+Subsidiary
+100.00
+100.00
+8
+Vodafone Idea Shared Services Limited (‘VISSL’)
+Subsidiary
+100.00
+100.00
+9
+You Broadband India Limited (‘YBIL’)
+Subsidiary
+100.00
+100.00
+
+The Financial Statements of the following associate and joint venture used in the consolidation are drawn up to the same reporting
+date as that of the Group and the accounting policies have been changed where necessary to ensure consistency with the policies
+adopted by the group. All the entities are incorporated in India.
+Sr.
+No.
+Name of the Company
+Relationship
+Voting Power % as at
+March 31, 2024
+March 31, 2023
+1
+Aditya Birla Idea Payments Bank Limited (ABIPBL)(1)
+Associate
+49.00
+49.00
+2
+Firefly Networks Limited (FNL)
+Joint Venture(2)
+50.00
+50.00
+(1) The Company is currently under liquidation.
+(2) by virtue of joint venture agreement
+2 (C) CHANGES IN OWNERSHIP INTERESTS
+
+-
+Subsidiaries
+
+
+The Group treats transactions with non-controlling
+interests that do not result in a loss of control as
+transactions with equity owners of the Group. A change
+in ownership interest results in an adjustment between
+the carrying amounts of the controlling and noncontrolling interests to reflect their relative interests
+in the subsidiary. Any difference between the amount
+of the adjustment to non-controlling interests and any
+consideration paid or received is recognised within
+equity.
+
+
+The subsidiaries are deconsolidated from the date
+the Group loses control on such subsidiaries. When
+the Group ceases to consolidate because of a loss
+of control, any retained interest in the entity is
+re-measured to its fair value with the change in carrying
+amount recognised in profit or loss. This fair value
+becomes the initial carrying amount for the purposes
+of subsequently accounting for the retained interest
+as an associate, joint venture or financial asset. In
+addition, any amounts previously recognised in other
+comprehensive income in respect of that entity are
+reclassified to profit and loss on disposal of the related
+assets and liabilities.
+
+-
+Associates and Joint Arrangements
+
+
+The Group ceases to equity account for an investment
+if it loses joint control or significant influence over such
+equity accounted investee. When the group ceases to
+equity account for an investee, any retained interest
+in the entity is re- measured to its fair value with the
+change in carrying amount recognised in profit or loss.
+
+261
+ANNUAL REPORT 2023-24
+Corporate
+Governance Report
+Business Responsibility
+and Sustainability Report
+Financial
+Statements
+Directors’ Report &
+Management Discussion and Analysis Report
+NOTES
+forming part of the Consolidated Financial Statements
+This fair value becomes the initial carrying amount for
+the purposes of subsequent accounting for the retained
+interest in the investee. In addition, any amounts
+previously recognised in other comprehensive income in
+respect of that investee are accounted for as if the Group
+had directly disposed of the related assets or liabilities.
+This may mean that amounts previously recognised in
+other comprehensive income are reclassified to profit
+and loss.
+
+
+If the ownership interest in a joint venture or an associate
+is reduced but joint control or significant influence is
+retained, only a proportionate share of the amounts
+previously recognised in other comprehensive income
+are reclassified to profit and loss where appropriate.
+3.
+The Honourable Supreme Court on October 24, 2019 along
+with supplementary order dated July 20, 2019 and final order
+dated September 01, 2020 delivered its judgment (together
+referred to as “AGR Judgment”) on the cross appeals against
+the Honourable TDSAT judgment dated April 23, 2015, relating
+to the definition of Adjusted Gross Revenue. The order upheld
+the principal demand, levy of interest, penalty and interest on
+penalty.
+
+On September 1, 2020, vide its judgment, the Honourable
+Supreme Court has inter-alia directed that Telecom Operators
+shall at the first instance, make the payment of 10% of the total
+dues as demanded by the Department of Telecommunications
+(‘DoT’) by March 31, 2021 and thereafter, Telecom Operators
+to make payment in Ten instalments commencing from April
+1, 2021 to March 31, 2031, payable by 31st March of every
+succeeding financial year.
+
+The Company had on August 10, 2021 filed a review petition
+with the Honourable Supreme Court for considering to hear the
+modification application on correction of manifest / clerical /
+arithmetic errors in the computation of AGR demands which
+is still pending to be heard.
+
+The Union Cabinet on September 15, 2021 approved major
+structural and process reforms in the telecom sector to boost
+the proliferation and penetration of broadband and telecom
+connectivity. Further to address liquidity requirements, the
+Cabinet has also approved deferment of AGR dues which are
+payable in annual instalments as determined by the Honourable
+Supreme Court for up to four years without any change in
+the instalment period and deferment of spectrum auction
+instalments payable from October 1, 2021 to September 30,
+2025 excluding the instalments due for spectrum auction
+2021 and 2022. It also provided upfront conversion of the
+interest amount arising due to such deferment into equity.
+The Company has conveyed its acceptance on January 10,
+2022 (“Exercise Date”).
+
+Further on March 31, 2022, the DoT computed the Net
+Present value (NPV) of the interest liability on moratorium
+period amounting to ` 161,332 Mn towards AGR dues (as
+per Honourable SC affidavit dated September 01, 2020) and
+deferred annual Spectrum liabilities as on the Exercise Date,
+which the Company has confirmed on April 14, 2022. The
+DoT on June 15, 2022 offered a moratorium on pending
+AGR related dues up to Financial Year 2018-19 along with an
+option of equity conversion of interest liability pertaining to
+the moratorium period for this additional amounts. On June
+29, 2022, the Company conveyed its acceptance for the
+deferment of AGR related dues till financial year 2018-19.
+The above mentioned letter has a summary of additional AGR
+dues amounting to ` 88,372 Mn (including amounts for the
+period till FY 16-17 not forming part of the affidavit submitted
+to Supreme Court). The DoT has mentioned that these are
+subject to further correction on account of disposal of various
+representations submitted by the Company, outcome of other
+pending litigations etc. and the undisputed amounts finally
+determined by December 31, 2025 shall be paid in six equal
+instalments post the moratorium period. In September 2022,
+the Company has also informed the DoT on AGR dues (beyond
+affidavit period till FY 18-19) interest during the moratorium
+period shall not be converted in to equity.
+
+The DoT, on February 03, 2023, issued an order under section
+62(4) of the Companies Act, 2013 (“the Act”), directing
+the Company to issue equity shares against the loan of
+` 161,332 Mn representing Net Present Value of the interest
+as at the Exercise Date as defined in equity conversion
+guidelines. On February 07, 2023 (“Date of conversion”), the
+Company’s Board has allotted shares to the Government of
+India (GoI).
+
+Consequent to the above, the Company has derecognised
+the loan liability of ` 161,332 Mn due to the issuance of
+16,133,184,899 equity shares at an issue price of ` 10 each
+amounting to ` 161,332 Mn, and consequential adjustment of
+` 3,305 Mn has been adjusted to Other equity. The Company
+has sought clarification on applicability of GST on the relevant
+portion of this conversion into equity from Central Board of
+Indirect Taxes and Customs (CBIC) and have also taken a
+legal opinion based on which it believes that the same is not
+applicable.
+
+As on March 31, 2024, the promoter shareholding of Vodafone
+group and Aditya Birla group is 48.91 % and GoI is 32.19%.
+
+During the year, the Company filed Curative Petition to allow
+correction of manifest/clerical and arithmetical errors in the
+
+262
+VODAFONE IDEA LIMITED
+NOTES
+forming part of the Consolidated Financial Statements
+provisional demands raised by DoT. The matter is currently
+pending.
+
+On April 4, 2024, the Company has filed affidavit with
+Honourable Supreme Court including the compliance letter
+stating that by acceptance of the deferment option and
+agreeing to moratorium of AGR dues for four years, it has
+complied with Court order dated September 1, 2020.
+
+Accordingly, as at March 31, 2024, the net liability towards
+AGR dues arising out of Honourable Supreme Court judgment
+amounting to ` 703,196 Mn (March 31, 2023: ` 655,462
+Mn) [net of payment of ` 78,544 Mn] is disclosed as deferred
+payment obligation pursuant to AGR judgement under long
+term borrowings in the financial statements.
+4.
+The Group has incurred a loss of ` 312,384 Mn for the year
+ended March 31, 2024. Its net worth stands at negative
+` 1,041,668 Mn and the Net Working Capital (excluding short
+term borrowings, future lease liability and certain accruals
+toward pending litigations) stands at negative ` 203,518 Mn.
+
+As at March 31, 2024, the outstanding debt from banks and
+others (including interest accrued but not due) of the Group
+is ` 42,126 Mn and the deferred payment obligation amount
+towards Spectrum and AGR (including interest accrued but not
+due) of the Group is ` 2,114,713 Mn. As at March 31, 2024,
+an amount of ` 23,636 Mn (March 31, 2023: ` 39,271 Mn)
+has been reclassified from non-current borrowings of loans
+from banks and others to current maturities of long-term
+debt of loans from banks and others for not meeting certain
+covenant clauses under the financial agreements. The Group
+has exchanged correspondences and continues to be in
+discussion with the lenders for next steps/waivers. Loans from
+banks and others and deferred payment obligations payable by
+March 31, 2025 is ` 18,339 Mn (excluding amount classified
+as current on account of not meeting certain covenant
+clauses) and ` 5,374 Mn respectively. As of date, the Group
+has met all its debt obligations payable to its lenders / banks
+and financial institutions along with applicable interest. The
+Company has utilized extended credit period to discharge
+some of its contractual obligations. Further, certain vendors
+have asked for payment of their overdue outstanding. The
+Company continues to be in discussion with them to agree
+to a payment plan. The Company is also required to provide
+bank guarantees at least 13 months prior to each of the
+instalment becoming due post the moratorium period i.e. from
+October 2025 and at each of the relevant dates till September
+2026 which aggregates to ` 247,469 Mn or seek a waiver
+from DoT for providing bank guarantees considering that the
+requirement of bank guarantees has been removed from the
+notice inviting applications (‘NIA’) for 2022 and subsequent
+spectrum auctions.
+
+Subsequent to the year end, the Company has raised an
+amount aggregating to ` 180,000 Mn by way of Further Public
+Offer (FPO), and accordingly issued 16,363,636,363 equity
+shares of ` 10/- each at an issue price of ` 11.00 per equity
+share (including a premium of ` 1.00 per equity share).
+Additionally, the Shareholders on May 8, 2024 have approved
+issuance of 1,395,427,034 equity shares of ` 10/- each at an
+issue price of ` 14.87 per equity share (including a premium
+of ` 4.87 per equity share) aggregating to ` 20,750 Mn on
+a preferential basis to an existing shareholder entity forming
+part of the promoter group.
+
+The Group believes, with the above capital infusion, it will be
+able to conclude the negotiations with lenders, vendors and
+DoT for continued support and generation of cash flow from
+operations that will enable it to settle its liabilities as they fall
+due. These financial statements have, therefore, been prepared
+on a going concern basis.
+5.
+MATERIAL ACCOUNTING POLICIES
+
+a)
+Revenue from contracts with customers
+
+
+Revenue is recognised when a customer obtains control
+of the goods or receive services and thus has the ability
+to direct the use and obtain the benefits from the goods
+or services. Revenue is measured at the Transaction
+price i.e. an amount that reflects the consideration, to
+which an entity expects to be entitled in exchange for
+transferring goods or services to customers, excluding
+amounts collected on behalf of third parties. Taxes and
+duties collected by the seller / service provider are to be
+deposited with the government and not received by the
+Group on their own account. Accordingly, it is excluded
+from revenue. The Group evaluates its exposure to
+significant risks and reward associated with the revenue
+arrangements in order to determine its position of
+a principal or an agent in this regard. Consideration
+payable to a customer includes cash or credit or other
+items expected to be payable to the customer (or
+to other parties that purchase the entity’s goods or
+services from the customer). The Group accounts for
+consideration payable to a customer as a reduction
+from the transaction price unless the payment to the
+customer is in exchange for a distinct goods or services
+that the customer transfers to the entity.
+
+
+i)
+Revenue from supply of services and sale of goods
+
+
+
+Revenue on

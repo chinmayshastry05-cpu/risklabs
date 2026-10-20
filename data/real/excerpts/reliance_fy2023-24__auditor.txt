@@ -1,0 +1,320 @@
+To The Members of Reliance Industries Limited
+Report on the Audit of the Consolidated
+Financial Statements
+Opinion
+We have audited the accompanying Consolidated Financial
+Statements of Reliance Industries Limited (“the Parent”)
+which includes its joint operations and its subsidiaries
+(the Parent and its subsidiaries together referred to as
+“the Group”), and the Group’s share of profit / loss in
+its associates and joint ventures, which comprise the
+Consolidated Balance Sheet as at 31st March, 2024, and
+the Consolidated Statement of Profit and Loss (including
+Other Comprehensive Income), the Consolidated
+Statement of Cash Flow and the Consolidated Statement
+of Changes in Equity for the year ended on that date, and
+Notes to the Consolidated Financial Statements, including
+a summary of material accounting policies and other
+explanatory information.
+In our opinion and to the best of our information and
+according to the explanations given to us, and based on the
+consideration of reports of the other auditors on separate /
+consolidated financial statements / financial information
+of the subsidiaries, associates and joint ventures referred
+to in the Other Matters section below, the aforesaid
+Consolidated Financial Statements give the information
+required by the Companies Act, 2013 (“the Act”) in
+the manner so required and give a true and fair view in
+conformity with the Indian Accounting Standards prescribed
+under Section 133 of the Act read with the Companies
+(Indian Accounting Standards) Rules, 2015, as amended
+(‘Ind AS’), and other accounting principles generally
+accepted in India, of the consolidated state of affairs of
+the Group as at 31st March, 2024, and their consolidated
+profit, their consolidated total comprehensive income, their
+consolidated cash flows and their consolidated changes in
+equity for the year ended on that date.
+Basis for Opinion
+We conducted our audit of the Consolidated Financial
+Statements in accordance with the Standards on Auditing
+(SAs) specified under Section 143(10) of the Act. Our
+responsibilities under those Standards are further
+described in the Auditor’s Responsibility for the Audit of the
+Consolidated Financial Statements section of our report.
+We are independent of the Group, its associates and joint
+ventures in accordance with the Code of Ethics issued by
+the Institute of Chartered Accountants of India (“ICAI”)
+together with the ethical requirements that are relevant to
+our audit of the Consolidated Financial Statements under
+the provisions of the Act and the Rules made thereunder,
+and we have fulfilled our other ethical responsibilities in
+accordance with these requirements and the ICAI’s Code
+of Ethics. We believe that the audit evidence obtained by
+us and the audit evidence obtained by the other auditors in
+terms of their reports referred to in the sub-paragraphs (a)
+and (b) of the Other Matters section below, is sufficient and
+appropriate to provide a basis for our audit opinion on the
+Consolidated Financial Statements.
+Key Audit Matters
+Key audit matters are those matters that, in our professional
+judgment, were of most significance in our audit of the
+Consolidated Financial Statements of the current period.
+These matters were addressed in the context of our audit
+of the Consolidated Financial Statements as a whole, and
+in forming our opinion thereon, and we do not provide a
+separate opinion on these matters. We have determined the
+matters described below to be the key audit matters to be
+communicated in our report.
+Sr.
+No. Key Audit Matter
+Auditor’s Response
+1. Litigation matters
+The Parent has certain significant ongoing legal proceedings
+for various complex matters with the Government of India and
+other parties, continuing from earlier years, which are as under:
+1.
+Matters in relation to Oil and Gas:
+
+(a) Disallowance of certain costs under the production
+sharing contract, relating to Block KG-DWN-98/3
+and consequent deposit of differential revenue on
+gas sales from D1D3 field to the gas pool account
+maintained by Gail (India) Limited.
+
+(b) Claim against the Parent in respect of gas said to
+have migrated from neighbouring blocks (KGD6).
+
+(c)
+Claims relating to limits of cost recovery, profit
+sharing and audit and accounting provisions of the
+public sector corporations etc., arising under two
+production sharing contracts entered into in 1994.
+Our audit procedures included and were not limited to the
+following:
+
+−Tested the design, implementation and operating effectiveness
+of the controls established by the Parent in the process of
+evaluation of litigation matters.
+
+−Assessed the management’s position through discussions
+with the in-house legal expert and external legal opinions
+obtained by the Parent (where considered necessary) on both,
+the probability of success in the aforesaid cases, and the
+magnitude of any potential loss.
+
+−Discussed with the management on the developments in
+respect of these litigations during the year ended 31st March
+2024 till the date of approval of the Parent’s Consolidated
+Financial Statements.
+
+−Rolled out enquiry letters to the Parent’s legal counsel and
+assessed the responses received.
+Sr.
+No. Key Audit Matter
+Auditor’s Response
+
+(d) Suit for specific performance of a contract for supply
+of natural gas before the Hon’ble Bombay High Court.
+
+Refer Notes 34.3 and 34.4 to the Consolidated Financial
+Statements.
+2.
+Matter relating to trading in shares of Reliance
+Petroleum Limited (‘RPL’):
+
+Securities Appellate Tribunal judgement dated 5th
+November, 2020, dismissing the Parent’s appeal made in
+relation to Order passed by the Securities and Exchange
+Board of India (‘SEBI’) under Section 11B of the SEBI Act,
+1992 in connection with trades by the Parent in the stock
+exchanges in 2007 in the shares of Reliance Petroleum
+Limited, then subsidiary of the Parent, against which an
+appeal has been filed with the Hon’ble Supreme Court of
+India which is pending.
+
+Refer Note 35 (III) to the Consolidated Financial
+Statements.
+
+Due to complexity involved in these litigation matters,
+management’s judgement regarding recognition,
+measurement and disclosure of provisions for these legal
+proceedings is inherently uncertain and might change over
+time as the outcomes of the legal cases are determined.
+
+Accordingly, it has been considered as a key audit matter.
+
+−Assessed the objectivity and competence of the Parent’s legal
+counsel involved in the process.
+
+−Reviewed the disclosures made by the Parent in the
+Consolidated Financial Statements.
+
+−Obtained Management Representation Letter on the
+assessment of these matters.
+2. Fair Valuation of Investments
+As at 31st March 2024, the Parent has investments of C 78,093
+crore in Equity and Preference Shares of Jio Digital Fibre Private
+Limited (‘JDFPL’) which are measured at fair value as per Ind AS
+109 read with Ind AS 113.
+These investments are Level 3 investments as per the fair value
+hierarchy in Ind AS 113 and accordingly determination of fair
+value is based on a high degree of judgement and input from
+data that is not directly observable in the market. Further, the
+fair value is significantly influenced by the expected pattern of
+future benefits of the tangible assets of JDFPL (fibre assets).
+Accordingly, it has been considered as a key audit matter.
+Refer Notes 2 and 37A to the Consolidated Financial
+Statements.
+Our audit procedures included and were not limited to the
+following:
+
+−Tested the design, implementation and operating effectiveness
+of the controls established by the Parent in the process of
+determination of fair value of the investments.
+
+−Reviewed the fair valuation reports provided by the
+management by involvement of internal valuation specialists.
+
+−Assessed the assumptions around the cash flow forecasts,
+discount rates, expected growth rates and its effect on
+business and terminal growth rates used and the valuation
+methodology inter-alia through involvement of the
+internal specialists.
+
+−Discussed potential changes in key drivers as compared
+to previous year / actual performance with management
+to evaluate the inputs and assumptions used in the cash
+flow forecasts.
+
+−Assessed the objectivity and competence of our internal
+specialist and Parent’s external experts involved in
+the process.
+
+−Reviewed the disclosures made by the Parent in the
+Consolidated Financial Statements.
+
+−Obtained Management Representation Letter as regards to fair
+valuation of these investments.
+204
+Reliance Industries Limited
+205
+Integrated Annual Report 2023-24
+Independent Auditor’s Report
+
+Sr.
+No. Key Audit Matter
+Auditor’s Response
+3. Revenue Recognition
+(a)
+The auditors of Reliance Jio Infocomm Limited (‘RJIL’),
+a step-down subsidiary of the Parent, have reported
+revenue recognition as a key audit matter due to the high
+volumes of data processed by the IT systems and the
+complexity of those IT systems.
+In respect of the key audit matter reported to us by the auditors of
+RJIL, we performed inquiry of the audit procedures performed by
+them to address the key audit matter. As reported by the subsidiary
+auditors, the audit procedures performed by them included and
+were not limited to the following:
+
+−Evaluated and tested the design, implementation and
+operating effectiveness of the relevant business process
+controls, inter-alia controls over the capture, measurement
+and authorisation of revenue transactions, involving internal
+Information Technology (IT) specialists for the automated
+controls, interface controls and reports generated through
+various relevant IT systems involved in the revenue process.
+
+−Involved internal IT specialists and tested the IT environment
+inter-alia for access controls, change management and
+application specific controls in the IT Systems over RJIL’s billing
+and other relevant support systems.
+
+−Tested collections and the reconciliation between revenue
+per the billing system and the financial records. Performed
+procedures to test the computation of revenue and
+deferred revenue.
+(b)
+The auditors of Reliance Retail Ventures Limited (‘RRVL’),
+a subsidiary of the Parent, have reported revenue
+recognition as a key audit matter at its subsidiary
+viz., Reliance Retail Limited (‘RRL’). RRL is engaged in
+organised retail and the trading transactions generating
+revenue comprising of high volume of individually small
+transactions which increases the risk of revenue being
+recognised inappropriately and which highlights the
+criticality of sound internal processes of summarising
+and recording sales. RRL trades in various consumption
+baskets on a principal basis and recognises full value of
+consideration as its revenue. The revenue is recognised
+on transfer of control of traded goods to the customers.
+Transfer of control coincides with collection of cash or
+cash equivalent from customers. In view of the above
+and since revenue is a key performance indicator for RRL,
+revenue recognition is identified as a key audit matter.
+In respect of the key audit matter reported to us by the auditors of
+RRVL, we performed inquiry of the audit procedure performed by
+them to address the key audit matter. As reported by the subsidiary
+auditors, the audit procedures performed by them included and
+were not limited to the following:
+
+−Obtained understanding of the process followed by the
+management to record the revenue from each store.
+
+−Evaluated the design and tested the operating effectiveness of
+the internal controls established by RRL over reconciliation of
+revenue recorded with underlying collection made by RRL.
+
+−Involved information technology specialist to test the
+automated controls and reports involved in the reconciliation
+of revenue.
+
+−On a test-check basis, selected samples of stores on various
+dates. For such selections, obtained details of revenue
+recorded through various modes of payment from RRL’s
+accounting system. Reconciled revenue recorded as per such
+details with the underlying collection made by RRL as per
+cash receipts, merchant payment reports, and other third
+party supporting.
+4. Information Technology (IT) systems and controls over
+financial reporting
+We identified IT systems and controls over financial reporting
+as a key audit matter for the Parent because its financial
+accounting and reporting systems are fundamentally reliant
+on IT systems and IT controls to process significant transaction
+volumes, specifically with respect to revenue and raw material
+consumption. Also, due to such large transaction volumes and
+the increasing challenge to protect the integrity of the Parent’s
+systems and data, cyber security has become more significant.
+Automated accounting procedures and IT environment controls,
+which include IT governance, IT general controls over program
+development and changes, access to program and data and
+Our procedures included and were not limited to the following:
+
+−Assessed the complexity of the IT environment by engaging
+IT specialists and through discussion with the head of IT and
+internal audit at the Parent and identified IT applications that
+are relevant to our audit.
+
+−Tested the design, implementation and operating effectiveness
+of IT general controls over program development and changes,
+access to program and data and IT operations by engaging
+IT specialists.
+Sr.
+No. Key Audit Matter
+Auditor’s Response
+IT operations, IT application controls and interfaces between
+IT applications, are required to be designed and to operate
+effectively to ensure accurate financial reporting.
+
+−Performed inquiry procedures with the head of cyber security
+at the Parent in respect of the overall security architecture and
+any key threats addressed by the Parent in the current year.
+
+−Tested the design, implementation and operating effectiveness
+of IT application controls in the key processes impacting
+financial reporting of the Parent by engaging IT specialists.
+
+−Tested the design, implementation and operating effectiveness
+of controls relating to data transmission through the different
+IT systems to the financial re

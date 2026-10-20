@@ -1,0 +1,17 @@
+{
+  "report_id": "reliance_fy2023-24__auditor.txt#chunk2",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "operational",
+        "severity": 2,
+        "evidence_quote": "We identified IT systems and controls over financial reporting as a key audit matter for the Parent because its financial accounting and reporting systems are fundamentally reliant on IT systems and IT controls to process significant transaction volumes, specifically with respect to revenue and raw material consumption. Also, due to such large transaction volumes and the increasing challenge to protect the integrity of the Parent\u2019s systems and data, cyber security has become more significant.",
+        "explanation": "Auditor flags heavy reliance on IT systems and cyber security challenges as a key audit matter, indicating operational risk."
+      }
+    ],
+    "overall_assessment": "The auditor identifies IT systems and cyber security as a key audit matter due to high reliance on IT for financial reporting, signaling operational risk; no going-concern concerns raised.",
+    "going_concern_flag": false
+  }
+}

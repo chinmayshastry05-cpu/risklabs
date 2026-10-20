@@ -4,3 +4,9 @@ __pycache__/
 .DS_Store
 .streamlit/secrets.toml
 *.pkl.bak
+# Real annual-report PDFs: publicly accessible but copyrighted company
+# reports. They are linked in data/real/provenance_manifest.json, never
+# redistributed by this repo. data/real/llm_cache/ IS committed on purpose:
+# it holds the recorded NIM responses behind the LLM features (provenance).
+data/real/pdfs/
+*.part

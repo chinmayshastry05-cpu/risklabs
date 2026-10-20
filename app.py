@@ -14,6 +14,11 @@ Tabs:
   3. Risk trend — multi-year risk trajectory infrastructure. Requires the user
      to supply real per-year financials; the shipped dataset is a single
      cross-section, so no trend is pre-computed or fabricated.
+  4. Real companies (case study) — historical, evidence-backed assessment of
+     real published annual reports (Bajaj Auto, Reliance, Vodafone Idea):
+     traced financials, classical lexicon baseline, and Nemotron LLM signals
+     with verbatim-verified evidence quotes. No prediction is made for real
+     companies; predictive validation is pending (see src/case_study.py).
 """
 
 import sys
@@ -450,6 +455,78 @@ def trend_tab(artifacts):
                    f"|slope| ≤ 2.0 counts as stable.")
 
 
+def real_data_tab():
+    """Case-study view over real published annual reports (no prediction)."""
+    from src.case_study import case_study, load_real_cohort
+    from src.features import RATIO_FEATURES
+
+    base = Path(__file__).resolve().parent
+    try:
+        cohort = load_real_cohort(base)
+    except Exception as exc:
+        st.error(f"Real-data files could not be loaded: {exc}")
+        return
+    fin = cohort["financials"]
+    st.subheader("Real companies — historical risk-assessment case studies")
+    st.caption(
+        "Figures transcribed from published annual reports; every value is "
+        "traced to its statement page and line in data/real/field_trace.csv. "
+        "This tab makes NO prediction: it is a historical assessment, and "
+        "predictive validation on real outcome labels is pending.")
+
+    options = {
+        f"{r.company} — FY {r.fy}": r.record_id
+        for r in fin.itertuples()}
+    choice = st.selectbox("Company-year", list(options.keys()))
+    study = case_study(base, cohort, options[choice])
+    rec = study["record"]
+
+    cols = st.columns(3)
+    cols[0].metric("Basis", rec["basis"])
+    cols[1].metric("Statements dated", rec["statements_date"])
+    cols[2].metric("Units", "₹ crore")
+    st.markdown(
+        f"**Source:** [annual report PDF]({rec['source_pdf_url']}) · "
+        f"[investor page]({rec['source_page']})")
+
+    st.markdown("**Financial ratios (same definitions as the synthetic "
+                "pipeline)**")
+    ratio_row = {name: rec[name] for name in RATIO_FEATURES}
+    if rec["total_debt"] == 0:
+        ratio_row["ocf_to_debt"] = float("nan")  # not applicable, see notes
+    st.dataframe(pd.DataFrame([ratio_row]).round(3),
+                 use_container_width=True, hide_index=True)
+
+    if study["lexicon"] is not None:
+        st.markdown("**Classical NLP baseline (risk lexicon over the "
+                    "report excerpts)**")
+        st.dataframe(pd.DataFrame([study["lexicon"]]).round(2),
+                     use_container_width=True, hide_index=True)
+
+    llm = study["llm"]
+    if llm is not None:
+        st.markdown("**LLM signals (NVIDIA Nemotron)**")
+        st.caption(
+            f"Model: {llm['models']} · result origin: {llm['origins']} "
+            f"('live' = recorded API response; 'cache' = replayed recorded "
+            f"response) · verified signals: {int(llm['signals'])} · "
+            f"unverifiable quotes dropped: {int(llm['dropped_quotes'])} · "
+            f"going-concern flag: {bool(llm['going_concern_flag'])}")
+        for sig in study["signals"]:
+            st.markdown(
+                f"- **{sig['category']}** (severity {sig['severity']}) — "
+                f"{sig['explanation']}  \n"
+                f"  > “{sig['evidence_quote']}”  \n"
+                f"  *Source: {sig['section']} — "
+                f"[annual report]({sig['source_pdf_url']})*")
+    elif study["excerpt_entries"]:
+        st.info("LLM extraction has not been run for this record yet.")
+
+    st.markdown("**Limitations for this record**")
+    for note in study["limitations"]:
+        st.markdown(f"- {note}")
+
+
 def main():
     st.set_page_config(page_title="RiskLabs - Explainable Financial Risk", layout="wide")
     st.title("RiskLabs - Explainable Financial-Risk Prototype")
@@ -473,18 +550,24 @@ def main():
         )
         st.stop()
 
-    tab1, tab2, tab3 = st.tabs(["Analyze company", "Model comparison", "Risk trend"])
+    tab1, tab2, tab3, tab4 = st.tabs(
+        ["Analyze company", "Model comparison", "Risk trend",
+         "Real companies (case study)"])
     with tab1:
         analyze_tab(artifacts)
     with tab2:
         comparison_tab(artifacts)
     with tab3:
         trend_tab(artifacts)
+    with tab4:
+        real_data_tab()
 
     st.divider()
     st.caption(
-        "**Disclaimer:** RiskLabs is a synthetic-data prototype built for a college project. "
-        "For educational use only - not financial advice, and not a prediction of real-world outcomes."
+        "**Disclaimer:** RiskLabs is a college project. The Analyze / "
+        "comparison tabs run on synthetic data; the case-study tab assesses "
+        "real published reports historically and makes no prediction. "
+        "For educational use only - not financial advice."
     )
 
 

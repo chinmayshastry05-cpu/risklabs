@@ -1,0 +1,23 @@
+{
+  "report_id": "bajaj_auto_fy2023-24__auditor.txt#chunk0",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "the aforesaid consolidated financial statements give the information required by the Companies Act, 2013, as amended (the 'Act') in the manner so required and give a true and fair view in conformity with the accounting principles generally accepted in India, of the consolidated state of affairs of the Group and its associate as at 31 March 2024, their consolidated profit including other comprehensive income, their consolidated cash flows and the consolidated statement of changes in equity for the year ended on that date.",
+        "explanation": "Auditor issued an unqualified opinion confirming the financial statements present a true and fair view."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "We have determined that there are no key audit matters to communicate in our report.",
+        "explanation": "No key audit matters identified, indicating no significant areas of audit risk or judgment."
+      }
+    ],
+    "overall_assessment": "The auditor's report is clean with an unqualified opinion and no key audit matters, indicating no material financial reporting risks.",
+    "going_concern_flag": false
+  }
+}

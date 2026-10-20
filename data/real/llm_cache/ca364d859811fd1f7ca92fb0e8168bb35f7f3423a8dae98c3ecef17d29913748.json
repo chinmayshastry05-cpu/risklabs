@@ -1,0 +1,10 @@
+{
+  "report_id": "vodafone_idea_fy2023-24__mda.txt#chunk1",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [],
+    "overall_assessment": "The excerpt contains only governance and board composition disclosures with no financial performance data or risk indicators. No liquidity, leverage, profitability, credit, legal, going concern, or operational risk signals are present.",
+    "going_concern_flag": false
+  }
+}

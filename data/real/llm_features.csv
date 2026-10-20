@@ -1,0 +1,4 @@
+record_id,signals,going_concern_flag,dropped_quotes,sev_liquidity,sev_leverage,sev_profitability,sev_credit,sev_legal,sev_going_concern,sev_operational,sev_positive,origins,models
+bajaj_auto_fy2023-24,11,False,1,1,0,1,0,0,0,1,0,cache,nvidia/nemotron-3-ultra-550b-a55b
+reliance_fy2023-24,22,False,4,0,0,1,0,2,0,2,0,cache+live,nvidia/nemotron-3-ultra-550b-a55b
+vodafone_idea_fy2023-24,18,False,3,2,3,2,2,3,3,2,0,cache+live,nvidia/nemotron-3-ultra-550b-a55b

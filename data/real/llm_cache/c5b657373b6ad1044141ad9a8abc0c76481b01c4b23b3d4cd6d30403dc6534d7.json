@@ -1,0 +1,35 @@
+{
+  "report_id": "reliance_fy2023-24__auditor.txt#chunk1",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "legal",
+        "severity": 2,
+        "evidence_quote": "Due to complexity involved in these litigation matters, management\u2019s judgement regarding recognition, measurement and disclosure of provisions for these legal proceedings is inherently uncertain and might change over time as the outcomes of the legal cases are determined.",
+        "explanation": "Pending SEBI litigation with uncertain provisions creates legal risk."
+      },
+      {
+        "category": "operational",
+        "severity": 2,
+        "evidence_quote": "These investments are Level 3 investments as per the fair value hierarchy in Ind AS 113 and accordingly determination of fair value is based on a high degree of judgement and input from data that is not directly observable in the market. Further, the fair value is significantly influenced by the expected pattern of future benefits of the tangible assets of JDFPL (fibre assets).",
+        "explanation": "Large Level 3 investment valuation relies on unobservable inputs and future benefit assumptions."
+      },
+      {
+        "category": "operational",
+        "severity": 2,
+        "evidence_quote": "The auditors of Reliance Jio Infocomm Limited (\u2018RJIL\u2019), a step-down subsidiary of the Parent, have reported revenue recognition as a key audit matter due to the high volumes of data processed by the IT systems and the complexity of those IT systems.",
+        "explanation": "Complex IT systems and high data volumes increase risk of revenue misstatement."
+      },
+      {
+        "category": "operational",
+        "severity": 2,
+        "evidence_quote": "RRL is engaged in organised retail and the trading transactions generating revenue comprising of high volume of individually small transactions which increases the risk of revenue being recognised inappropriately and which highlights the criticality of sound internal processes of summarising and recording sales.",
+        "explanation": "High-volume small transactions in retail raise risk of inappropriate revenue recognition."
+      }
+    ],
+    "overall_assessment": "The auditor highlights key audit matters including uncertain legal provisions, significant Level 3 investment valuation judgements, and revenue recognition risks across major subsidiaries, indicating material estimation uncertainty and operational complexity.",
+    "going_concern_flag": false
+  }
+}

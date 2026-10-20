@@ -1,0 +1,47 @@
+{
+  "report_id": "vodafone_idea_fy2023-24__going_concern_note.txt#chunk0",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "legal",
+        "severity": 3,
+        "evidence_quote": "The Honourable Supreme Court on October 24, 2019 along with supplementary order dated July 20, 2019 and final order dated September 01, 2020 delivered its judgment (together referred to as \u201cAGR Judgment\u201d) on the cross appeals against the Honourable TDSAT judgment dated April 23, 2015, relating to the definition of Adjusted Gross Revenue. The order upheld the principal demand, levy of interest, penalty and interest on penalty.",
+        "explanation": "Supreme Court upheld substantial AGR dues including interest and penalties, creating major legal liability."
+      },
+      {
+        "category": "legal",
+        "severity": 2,
+        "evidence_quote": "On September 1, 2020, vide its judgment, the Honourable Supreme Court has inter-alia directed that Telecom Operators shall at the first instance, make the payment of 10% of the total dues as demanded by the Department of Telecommunications (\u2018DoT\u2019) by March 31, 2021 and thereafter, Telecom Operators to make payment in Ten instalments commencing from April 1, 2021 to March 31, 2031, payable by 31st March of every succeeding financial year.",
+        "explanation": "Court-mandated instalment schedule for AGR dues extends to 2031, imposing long-term payment obligations."
+      },
+      {
+        "category": "legal",
+        "severity": 2,
+        "evidence_quote": "The Company had on August 10, 2021 filed a review petition with the Honourable Supreme Court for considering to hear the modification application on correction of manifest / clerical / arithmetic errors in the computation of AGR demands which is still pending to be heard.",
+        "explanation": "Pending review petition adds uncertainty to final AGR liability amount."
+      },
+      {
+        "category": "liquidity",
+        "severity": 2,
+        "evidence_quote": "Further to address liquidity requirements, the Cabinet has also approved deferment of AGR dues which are payable in annual instalments as determined by the Honourable Supreme Court for up to four years without any change in the instalment period and deferment of spectrum auction instalments payable from October 1, 2021 to September 30, 2025 excluding the instalments due for spectrum auction",
+        "explanation": "Government deferral of AGR and spectrum payments indicates liquidity stress but provides temporary relief."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "The Union Cabinet on September 15, 2021 approved major structural and process reforms in the telecom sector to boost the proliferation and penetration of broadband and telecom connectivity.",
+        "explanation": "Government reforms aim to strengthen the telecom sector, providing long-term positive outlook."
+      },
+      {
+        "category": "credit",
+        "severity": 1,
+        "evidence_quote": "Aditya Birla Idea Payments Bank Limited (ABIPBL)(1) Associate 49.00 49.00 (1) The Company is currently under liquidation.",
+        "explanation": "Associate under liquidation may lead to write-down of investment value."
+      }
+    ],
+    "overall_assessment": "Vodafone Idea faces significant legal and liquidity risks from the Supreme Court's AGR judgment and ongoing payment obligations, though government reforms and payment deferrals provide some mitigation.",
+    "going_concern_flag": false
+  }
+}

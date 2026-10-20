@@ -1,0 +1,29 @@
+{
+  "report_id": "reliance_fy2023-24__auditor.txt#chunk0",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "legal",
+        "severity": 2,
+        "evidence_quote": "The Parent has certain significant ongoing legal proceedings for various complex matters with the Government of India and other parties, continuing from earlier years, which are as under:",
+        "explanation": "Significant ongoing litigation with government and other parties over oil and gas contracts creates contingent liability risk."
+      },
+      {
+        "category": "legal",
+        "severity": 2,
+        "evidence_quote": "Matter relating to trading in shares of Reliance Petroleum Limited (\u2018RPL\u2019): Securities Appellate Tribunal judgement dated 5th November, 2020, dismissing the Parent\u2019s appeal made in relation to Order passed by the Securities and Exchange Board of India (\u2018SEBI\u2019) under Section 11B of the SEBI Act, 1992 in connection with trades by the Parent in the stock exchanges in 2007 in the shares of Reliance Petroleum Limited, then subsidiary of the Parent, against which an appeal has been filed with the Hon\u2019ble Supreme Court of India which is pending.",
+        "explanation": "Pending Supreme Court appeal against SEBI order on historical share trades poses regulatory and financial risk."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "In our opinion and to the best of our information and according to the explanations given to us, and based on the consideration of reports of the other auditors on separate / consolidated financial statements / financial information of the subsidiaries, associates and joint ventures referred to in the Other Matters section below, the aforesaid Consolidated Financial Statements give the information required by the Companies Act, 2013 (\u201cthe Act\u201d) in the manner so required and give a true and fair view in conformity with the Indian Accounting Standards prescribed under Section 133 of the Act read with the Companies (Indian Accounting Standards) Rules, 2015, as amended (\u2018Ind AS\u2019), and other accounting principles generally accepted in India, of the consolidated state of affairs of the Group as at 31st March, 2024, and their consolidated profit, their consolidated total comprehensive income, their consolidated cash flows and their consolidated changes in equity for the year ended on that date.",
+        "explanation": "Unqualified audit opinion confirms financial statements present a true and fair view."
+      }
+    ],
+    "overall_assessment": "The auditor issued an unqualified opinion on the consolidated financial statements, but highlighted significant ongoing legal proceedings related to oil and gas contracts and a securities trading matter as key audit matters, indicating potential contingent liabilities.",
+    "going_concern_flag": false
+  }
+}

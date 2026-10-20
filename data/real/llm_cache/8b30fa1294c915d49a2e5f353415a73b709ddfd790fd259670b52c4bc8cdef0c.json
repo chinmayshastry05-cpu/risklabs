@@ -1,0 +1,29 @@
+{
+  "report_id": "vodafone_idea_fy2023-24__going_concern_note.txt#chunk2",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "liquidity",
+        "severity": 2,
+        "evidence_quote": "The Company is also required to provide bank guarantees at least 13 months prior to each of the instalment becoming due post the moratorium period i.e. from October 2025 and at each of the relevant dates till September 2026 which aggregates to ` 247,469 Mn or seek a waiver from DoT for providing bank guarantees considering that the requirement of bank guarantees has been removed from the notice inviting applications ('NIA') for 2022 and subsequent spectrum auctions.",
+        "explanation": "Company faces large bank guarantee obligations of \u20b9247,469 Mn from Oct 2025, requiring waiver or significant liquidity."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "Subsequent to the year end, the Company has raised an amount aggregating to ` 180,000 Mn by way of Further Public Offer (FPO), and accordingly issued 16,363,636,363 equity shares of ` 10/- each at an issue price of ` 11.00 per equity share (including a premium of ` 1.00 per equity share). Additionally, the Shareholders on May 8, 2024 have approved issuance of 1,395,427,034 equity shares of ` 10/- each at an issue price of ` 14.87 per equity share (including a premium of ` 4.87 per equity share) aggregating to ` 20,750 Mn on a preferential basis to an existing shareholder entity forming part of the promoter group.",
+        "explanation": "Company raised \u20b9180,000 Mn via FPO and \u20b920,750 Mn via preferential issue, strengthening capital position."
+      },
+      {
+        "category": "positive",
+        "severity": 0,
+        "evidence_quote": "The Group believes, with the above capital infusion, it will be able to conclude the negotiations with lenders, vendors and DoT for continued support and generation of cash flow from operations that will enable it to settle its liabilities as they fall due. These financial statements have, therefore, been prepared on a going concern basis.",
+        "explanation": "Management asserts ability to settle liabilities with capital infusion and ongoing negotiations, supporting going concern basis."
+      }
+    ],
+    "overall_assessment": "The company has secured substantial equity funding (\u20b9200,750 Mn) which supports its going concern assertion, but faces a significant near-term liquidity challenge with \u20b9247,469 Mn in bank guarantee requirements from October 2025 unless a DoT waiver is obtained.",
+    "going_concern_flag": false
+  }
+}

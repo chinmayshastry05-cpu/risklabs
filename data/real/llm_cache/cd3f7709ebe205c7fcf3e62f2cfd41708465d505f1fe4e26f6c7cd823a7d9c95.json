@@ -1,0 +1,29 @@
+{
+  "report_id": "reliance_fy2023-24__discussion.txt#chunk2",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "prompt_version": "risklabs-extract-v2",
+  "parsed": {
+    "signals": [
+      {
+        "category": "operational",
+        "severity": 1,
+        "evidence_quote": "\u203a Macro-economic impact on consumer sentiments",
+        "explanation": "Macro-economic headwinds could dampen consumer spending and affect revenue."
+      },
+      {
+        "category": "operational",
+        "severity": 1,
+        "evidence_quote": "\u203a Supply of quality real estate due to limited availability of quality malls and high streets",
+        "explanation": "Limited availability of quality retail real estate may hinder store expansion."
+      },
+      {
+        "category": "operational",
+        "severity": 1,
+        "evidence_quote": "\u203a Access to trained manpower to support growth",
+        "explanation": "Shortage of trained manpower could impede business growth."
+      }
+    ],
+    "overall_assessment": "The excerpt highlights operational risks from macro-economic conditions, real estate constraints, and talent shortages, but no immediate financial distress or going-concern issues.",
+    "going_concern_flag": false
+  }
+}
